@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=dwm
+Comment=dynamic window manager for X
+Exec=dwm
+#Exec=env GNOME_SHELL_SESSION_MODE=ubuntu gnome-session --session=ubuntu
+Type=Application
+# add this file to /usr/share/xsessions/dwm.desktop
