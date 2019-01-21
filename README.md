@@ -12,6 +12,7 @@ Original: https://dwm.suckless.org/
 
 ## Keyboard Customizations
 Meta Key (⊞) is reset to the Windows key
+
 Function | Keybinding
 ------------ | -------------
 dmenu | ⊞+<Space>
