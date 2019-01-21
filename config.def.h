@@ -45,6 +45,7 @@ static const Layout layouts[] = {
 
 /* key definitions */
 #define MODKEY Mod4Mask  // Windows key for meta
+#define AltMask Mod1Mask  // Alt key
 #define TAGKEYS(KEY,TAG) \
 	{ MODKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \
 	{ MODKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
@@ -74,11 +75,11 @@ static Key keys[] = {
 	{ MODKEY,                       XK_Return, zoom,           {0} },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
 	{ MODKEY|ShiftMask,             XK_c,      killclient,     {0} },
-	{ MODKEY|ShiftMask,             XK_t,      setlayout,      {.v = &layouts[0]} },
-	{ MODKEY|ShiftMask,             XK_f,      setlayout,      {.v = &layouts[1]} },
-	{ MODKEY|ShiftMask,             XK_m,      setlayout,      {.v = &layouts[2]} },
-	{ MODKEY,                       XK_p,  setlayout,      {0} },
-	{ MODKEY|ShiftMask,             XK_p,  togglefloating, {0} },
+	{ MODKEY|AltMask,               XK_t,      setlayout,      {.v = &layouts[0]} },
+	{ MODKEY|AltMask,               XK_f,      setlayout,      {.v = &layouts[1]} },
+	{ MODKEY|AltMask,               XK_m,      setlayout,      {.v = &layouts[2]} },
+	{ MODKEY|AltMask,               XK_=,      setlayout,      {0} },
+	{ MODKEY|AltMask,               XK_-,      togglefloating, {0} },
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
 	{ MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
 	{ MODKEY,                       XK_comma,  focusmon,       {.i = -1 } },
