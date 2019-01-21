@@ -30,7 +30,7 @@ Layout: Floating | ⬆+⊞+f
 Layout: Monocle | ⬆+⊞+m
 Layout: Centered Master | ⬆+⊞+u
 Layout: Centered Floating Master | ⬆+⊞+o
-Cycle Layout | ⊞+<=>
+Toggle Last Layout | ⊞+<=>
 Float Window | ⬆+⊞+<->
 Apply Tag 1..9 | ⬆+⊞+[1..9]
 Apply All Tags | ⬆+⊞+0
