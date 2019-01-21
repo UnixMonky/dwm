@@ -22,25 +22,25 @@ Next Window | ⊞+j
 Previous Window | ⊞+k
 Add to Master  | ⊞+i
 Remove from Master | ⊞+d
-Zoom to Master | ⊞+<Enter>
+Zoom to Master | ⊞+[Enter]
 _view | ⊞+<Tab>
-Kill Client | ⬆+⊞+c
-Layout: Tiled | ⬆+⊞+t
-Layout: Floating | ⬆+⊞+f
-Layout: Monocle | ⬆+⊞+m
-Layout: Centered Master | ⬆+⊞+u
-Layout: Centered Floating Master | ⬆+⊞+o
-Toggle Last Layout | ⊞+<=>
-Float Window | ⬆+⊞+<->
-Apply Tag 1..9 | ⬆+⊞+[1..9]
-Apply All Tags | ⬆+⊞+0
+Kill Client | [CRTL]+⊞+c
+Layout: Tiled | [CRTL]+⊞+t
+Layout: Floating | [CRTL]+⊞+f
+Layout: Monocle | [CRTL]+⊞+m
+Layout: Centered Master | [CRTL]+⊞+u
+Layout: Centered Floating Master | [CRTL]+⊞+o
+Toggle Last Layout | ⊞+[]=]
+Float Window | [CRTL]+⊞+[-]
+Apply Tag 1..9 | [CRTL]+⊞+[1..9]
+Apply All Tags | [CRTL]+⊞+0
 Show Tag 1..9 | ⊞+[1..9]
 Show All Tags | ⊞+0
 _focusmon+ | ⊞+.
 _focusmon- | ⊞+,
-_tagmon+ | ⬆+⊞+.
-_tagmon- | ⬆+⊞+,
-Quit dwm | ⬆+⊞+q
+_tagmon+ | [CRTL]+⊞+.
+_tagmon- | [CRTL]+⊞+,
+Quit dwm | [CRTL]+⊞+q
 
 ## Patching process
 My patching strategy:
