@@ -37,7 +37,7 @@ Layout: Floating | [ALT]+f
 Layout: Monocle | [ALT]+m
 Layout: Centered Master | [ALT]+u
 Layout: Centered Floating Master | [ALT]+o
-Cycle through Layouts | [ALT]+,
+Cycle through Layouts | [ALT]++
 Cycle through Layouts | [ALT]+-
 Toggle Last Layout | [ALT]+0
 Float Window | [ALT]+[-]
