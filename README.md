@@ -9,6 +9,11 @@ Original: https://dwm.suckless.org/
   - https://dwm.suckless.org/patches/systray/
 - Centered Master
   - https://dwm.suckless.org/patches/centeredmaster/
+- AutoStart
+  - https://dwm.suckless.org/patches/autostart/
+- Cycle Layouts
+  - https://dwm.suckless.org/patches/cyclelayout/
+
 
 ## Keyboard Customizations
 Meta Key (⊞) is reset to the Windows key
@@ -32,6 +37,8 @@ Layout: Floating | [ALT]+f
 Layout: Monocle | [ALT]+m
 Layout: Centered Master | [ALT]+u
 Layout: Centered Floating Master | [ALT]+o
+Cycle through Layouts | [ALT]+,
+Cycle through Layouts | [ALT]+-
 Toggle Last Layout | [ALT]+0
 Float Window | [ALT]+[-]
 Apply Tag 1..9 | [CRTL]+[F1..F9]
