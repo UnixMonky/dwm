@@ -72,8 +72,8 @@ static Key keys[] = {
 //	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_t,      spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
-	{ MODKEY,                       XK_],      focusstack,     {.i = +1 } },
-	{ MODKEY,                       XK_[,      focusstack,     {.i = -1 } },
+	{ MODKEY,                       XK_l,      focusstack,     {.i = +1 } },
+	{ MODKEY,                       XK_h,      focusstack,     {.i = -1 } },
 	{ MODKEY,                       XK_equal,  incnmaster,     {.i = +1 } },
 	{ MODKEY,                       XK_minus,  incnmaster,     {.i = -1 } },
 	{ MODKEY|ControlMask,           XK_minus,  setmfact,       {.f = -0.05} },
@@ -92,8 +92,8 @@ static Key keys[] = {
 	{ MODKEY|ControlMask,           XK_0,      tag,            {.ui = ~0 } },
 	{ MODKEY,                       XK_comma,  focusmon,       {.i = -1 } },
 	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
-	{ MODKEY,                       XK_Left,  tagmon,         {.i = -1 } },
-	{ MODKEY,                       XK_Right, tagmon,         {.i = +1 } },
+	{ MODKEY,                       XK_Left,   tagmon,         {.i = -1 } },
+	{ MODKEY,                       XK_Right,  tagmon,         {.i = +1 } },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
