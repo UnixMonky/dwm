@@ -40,7 +40,7 @@ Layout: Centered Floating Master | [ALT]+o
 Cycle through Layouts | [ALT]++
 Cycle through Layouts | [ALT]+-
 Toggle Last Layout | [ALT]+0
-Float Window | [ALT]+[-]
+Float Window | \
 Apply Tag 1..9 | [CRTL]+[F1..F9]
 Apply All Tags | [F11]
 Show Tag 1..9 | [F1..F9]
