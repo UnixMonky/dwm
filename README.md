@@ -15,32 +15,34 @@ Meta Key (⊞) is reset to the Windows key
 
 Function | Keybinding
 ------------ | -------------
-dmenu | ⊞+<Space>
-Menu Bar Toggle | ⊞+b
-Terminal | ⊞+t
-Next Window | ⊞+j
-Previous Window | ⊞+k
-Add to Master  | ⊞+i
-Remove from Master | ⊞+d
-Zoom to Master | ⊞+[Enter]
-_view | ⊞+<Tab>
-Kill Client | [CRTL]+⊞+c
-Layout: Tiled | [CRTL]+⊞+t
-Layout: Floating | [CRTL]+⊞+f
-Layout: Monocle | [CRTL]+⊞+m
-Layout: Centered Master | [CRTL]+⊞+u
-Layout: Centered Floating Master | [CRTL]+⊞+o
-Toggle Last Layout | ⊞+[]=]
-Float Window | [CRTL]+⊞+[-]
-Apply Tag 1..9 | [CRTL]+⊞+[1..9]
-Apply All Tags | [CRTL]+⊞+0
-Show Tag 1..9 | ⊞+[1..9]
-Show All Tags | ⊞+0
-_focusmon+ | ⊞+.
-_focusmon- | ⊞+,
-_tagmon+ | [CRTL]+⊞+.
-_tagmon- | [CRTL]+⊞+,
-Quit dwm | [CRTL]+⊞+q
+dmenu | [Space]
+Menu Bar Toggle | b
+Terminal | t
+Next Window | [
+Previous Window | ]
+Add to Master  | =
+Remove from Master | -
+Widen client | [CTRL]+=
+Narrow client | [CTRL]+-
+Zoom to Master | [Enter]
+View Previous Tag | [Tab]
+Kill Client | [CRTL]+c
+Layout: Tiled | [ALT]+t
+Layout: Floating | [ALT]+f
+Layout: Monocle | [ALT]+m
+Layout: Centered Master | [ALT]+u
+Layout: Centered Floating Master | [ALT]+o
+Toggle Last Layout | [ALT]+0
+Float Window | [ALT]+[-]
+Apply Tag 1..9 | [CRTL]+[F1..F9]
+Apply All Tags | [F11]
+Show Tag 1..9 | [F1..F9]
+Show All Tags | [F12]
+Focus to next Display | .
+Focus to previous Display | ,
+Move client to next Display | ➡
+Move Client to previous Display | ⬅
+Quit dwm | [CRTL]+q
 
 ## Patching process
 My patching strategy:
