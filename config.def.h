@@ -95,7 +95,7 @@ static Key keys[] = {
 	{ MODKEY|AltMask,		            XK_minus,  cyclelayout,    {.i = -1 } },
 	{ MODKEY|AltMask,               XK_equal,  cyclelayout,    {.i = +1 } },
 	{ MODKEY|AltMask,               XK_0,      setlayout,      {0} },
-	{ MODKEY,                       XK_\,     togglefloating, {0} },
+	{ MODKEY,                       XK_\\,     togglefloating, {0} },
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
 	{ MODKEY|ControlMask,           XK_0,      tag,            {.ui = ~0 } },
 	{ MODKEY,                       XK_comma,  focusmon,       {.i = -1 } },
