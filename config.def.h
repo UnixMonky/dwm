@@ -4,7 +4,7 @@
 static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const unsigned int systraypinning = 0;   /* 0: sloppy systray follows selected monitor, >0: pin systray to monitor X */
-static const unsigned int systrayspacing = 2;   /* systray spacing */
+static const unsigned int systrayspacing = 10;   /* systray spacing */
 static const int systraypinningfailfirst = 1;   /* 1: if pinning fails, display systray on the first monitor, False: display systray on the last monitor*/
 static const int showsystray        = 1;     /* 0 means no systray */
 static const int showbar            = 1;        /* 0 means no bar */
@@ -71,8 +71,8 @@ static const Layout layouts[] = {
 #define MODKEY Mod4Mask  // Windows key for meta
 #define AltMask Mod1Mask  // Alt key
 #define TAGKEYS(KEY,TAG) \
-	{ MODKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \
-	{ ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
+	{ MODKEY,              KEY,      view,           {.ui = 1 << TAG} }, \
+	{ ControlMask,         KEY,      toggleview,     {.ui = 1 << TAG} }, \
 	{ AltMask,             KEY,      tag,            {.ui = 1 << TAG} }, \
 	{ ControlMask|AltMask, KEY,      toggletag,      {.ui = 1 << TAG} },
 
