@@ -25,8 +25,8 @@ Menu Bar Toggle | b
 Terminal | t
 Next Window | [ALT]+[Tab]
 Previous Window | [ALT]+[SHIFT]+[TAB]
-Add to Master  | =
-Remove from Master | -
+Add to Master  | \
+Remove from Master | [CTRL]+\
 Widen client | [CTRL]+=
 Narrow client | [CTRL]+-
 Zoom to Master | [Enter]
