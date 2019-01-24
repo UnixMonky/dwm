@@ -72,6 +72,7 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "st", NULL };
+static const char *keepasscmd[] = { "keepass2", "--auto-type", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -113,6 +114,7 @@ static Key keys[] = {
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
 	{ AltMask|ControlMask,          XK_Delete, quit,           {0} },
+	{ AltMask|ControlMask,          XK_q,      spawn,          {.v = keepasscmd } },
 };
 
 /* button definitions */
