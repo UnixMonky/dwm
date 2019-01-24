@@ -111,7 +111,7 @@ static Key keys[] = {
 	TAGKEYS(                        XK_7,                      6)
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
-	{ MODKEY|ControlMask,           XK_q,      quit,           {0} },
+	{ AltMask|ControlMask,          XK_Delete, quit,           {0} },
 };
 
 /* button definitions */
