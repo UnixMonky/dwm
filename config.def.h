@@ -88,7 +88,7 @@ static Key keys[] = {
 	{ MODKEY|ControlMask,           XK_equal,  setmfact,       {.f = +0.05} },
 	{ MODKEY,                       XK_Return, zoom,           {0} },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
-	{ AltMask,                      XK_F4,     killclient,     {0} },
+	{ MODKEY|AltMask,               XK_F4,     killclient,     {0} },
 	{ MODKEY|AltMask,               XK_t,      setlayout,      {.v = &layouts[0]} },
 	{ MODKEY|AltMask,               XK_f,      setlayout,      {.v = &layouts[1]} },
 	{ MODKEY|AltMask,               XK_m,      setlayout,      {.v = &layouts[2]} },
@@ -112,7 +112,7 @@ static Key keys[] = {
 	TAGKEYS(                        XK_F6,                      5)
 	TAGKEYS(                        XK_F7,                      6)
 	TAGKEYS(                        XK_F8,                      7)
-	TAGKEYS(                        XK_F9,                      8)
+ 	TAGKEYS(                        XK_F9,                      8)
 	{ AltMask|ControlMask,          XK_Delete, quit,           {0} },
 	// { AltMask|ControlMask,          XK_q,      spawn,          {.v = keepasscmd } },
 };
