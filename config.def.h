@@ -81,7 +81,7 @@ static Key keys[] = {
 	{ Mod1Mask,                     XK_Tab,    focusstack,     {.i = +1 } },
 	{ Mod1Mask|ShiftMask,           XK_Tab,    focusstack,     {.i = -1 } },
 	{ MODKEY,                       XK_backslash, incnmaster,     {.i = +1 } },
-	{ MODKEY|ControlMask,           XK_backslash, incnmaster,     {.i = -1 } },
+	{ MODKEY|ShiftMask,             XK_backslash, incnmaster,     {.i = -1 } },
 	{ MODKEY|ControlMask,           XK_minus,  setmfact,       {.f = -0.05} },
 	{ MODKEY|ControlMask,           XK_equal,  setmfact,       {.f = +0.05} },
 	{ MODKEY,                       XK_Return, zoom,           {0} },
