@@ -21,35 +21,35 @@ Meta Key (⊞) is reset to the Windows key
 Function | Keybinding
 ------------ | -------------
 dmenu | [Space]
-Menu Bar Toggle | b
-Terminal | t
+Menu Bar Toggle | [b]
+Terminal | [t]
 Next Window | [ALT]+[Tab]
 Previous Window | [ALT]+[SHIFT]+[TAB]
-Add to Master  | \
-Remove from Master | [CTRL]+\
-Widen client | [CTRL]+=
-Narrow client | [CTRL]+-
+Add to Master  | [\]
+Remove from Master | [CTRL]+[\]
+Widen client | [CTRL]+[=]
+Narrow client | [CTRL]+[-]
 Zoom to Master | [Enter]
 View Previous Tag | [Tab]
-Kill Client | [CRTL]+c
-Layout: Tiled | [ALT]+t
-Layout: Floating | [ALT]+f
-Layout: Monocle | [ALT]+m
-Layout: Centered Master | [ALT]+u
-Layout: Centered Floating Master | [ALT]+o
-Cycle through Layouts | [ALT]++
-Cycle through Layouts | [ALT]+-
-Toggle Last Layout | [ALT]+0
-Float Window | \
+Kill Client | [ALT]+[F4] (NO META)
+Layout: Tiled | [ALT]+[t]
+Layout: Floating | [ALT]+[f]
+Layout: Monocle | [ALT]+[m]
+Layout: Centered Master | [ALT]+[u]
+Layout: Centered Floating Master | [ALT]+[o]
+Cycle through Layouts | [ALT]+[+]
+Cycle through Layouts | [ALT]+[-]
+Toggle Last Layout | [ALT]+[0]
+Float Window | [\]
 Apply Tag 1..9 | [CRTL]+[F1..F9]
 Apply All Tags | [F11]
 Show Tag 1..9 | [F1..F9]
 Show All Tags | [F12]
-Focus to next Display | .
-Focus to previous Display | ,
-Move client to next Display | ➡
-Move Client to previous Display | ⬅
-Quit dwm | [CRTL]+q
+Focus to next Display | [.]
+Focus to previous Display | [,]
+Move client to next Display | [➡]
+Move Client to previous Display | [⬅]
+Quit dwm | [CRTL]+[q]
 
 ## Patching process
 My patching strategy:
