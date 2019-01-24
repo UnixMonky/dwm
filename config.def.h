@@ -60,10 +60,12 @@ static const Layout layouts[] = {
 #define MODKEY Mod4Mask  // Windows key for meta
 #define AltMask Mod1Mask  // Alt key
 #define TAGKEYS(KEY,TAG) \
-	// { MODKEY,                     KEY,      view,           {.ui = 1 << TAG} }, \
-	// { MODKEY|ControlMask,         KEY,      toggleview,     {.ui = 1 << TAG} }, \
-	// { MODKEY|AltMask,             KEY,      tag,            {.ui = 1 << TAG} }, \
-	// { MODKEY|ControlMask|AltMask, KEY,      toggletag,      {.ui = 1 << TAG} },
+	/* original, saved for important things
+	{ MODKEY,                     KEY,      view,           {.ui = 1 << TAG} }, \
+	{ MODKEY|ControlMask,         KEY,      toggleview,     {.ui = 1 << TAG} }, \
+	{ MODKEY|AltMask,             KEY,      tag,            {.ui = 1 << TAG} }, \
+	{ MODKEY|ControlMask|AltMask, KEY,      toggletag,      {.ui = 1 << TAG} },
+	*/
 	{ ,                    KEY,      view,           {.ui = 1 << TAG} }, \
 	{ ControlMask,         KEY,      toggleview,     {.ui = 1 << TAG} }, \
 	{ AltMask,             KEY,      tag,            {.ui = 1 << TAG} }, \
