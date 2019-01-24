@@ -11,8 +11,8 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 // static const char *fonts[]          = { "monospace:size=10" };
 static const char *fonts[]          = {
-	"DejaVu Sans Mono:pixelsize=20",
-	"Material Design Icons:pixelsize=20",
+	"DejaVu Sans Mono:pixelsize=14",
+	"Material Design Icons:pixelsize=14",
 };
 static const char dmenufont[]       = "monospace:size=10";
 static const char col_gray1[]       = "#222222";
