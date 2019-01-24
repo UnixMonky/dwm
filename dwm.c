@@ -848,7 +848,7 @@ drawbar(Monitor *m)
 	if (m == selmon) { /* status is only drawn on selected monitor */
 		drw_setscheme(drw, scheme[SchemeNorm]);
 		// sw = TEXTW(stext) - lrpad + 2; /* 2px right padding */
-		sw = TEXTW(stext) - lrpad + ( stw * .5 ); /* right pad by 80% of systray */
+		sw = TEXTW(stext) - lrpad + ( stw * .6 ); /* right pad by 80% of systray */
 		while (1) {
 			if ((unsigned int)*ts > LENGTH(colors)) { ts++; continue ; }
 			ctmp = *ts;
