@@ -23,8 +23,8 @@ Function | Keybinding
 dmenu | [Space]
 Menu Bar Toggle | b
 Terminal | t
-Next Window | [
-Previous Window | ]
+Next Window | [ALT]+[Tab]
+Previous Window | [ALT]+[SHIFT]+[TAB]
 Add to Master  | =
 Remove from Master | -
 Widen client | [CTRL]+=
