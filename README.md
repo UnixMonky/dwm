@@ -31,7 +31,7 @@ Widen client | [CTRL]+[=]
 Narrow client | [CTRL]+[-]
 Zoom to Master | [Enter]
 View Previous Tag | [Tab]
-Kill Client | [ALT]+[F4]s
+Kill Client | [ALT]+[F4]
 Layout: Tiled | [ALT]+[t]
 Layout: Floating | [ALT]+[f]
 Layout: Monocle | [ALT]+[m]
