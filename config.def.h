@@ -71,7 +71,7 @@ static const Layout layouts[] = {
 #define MODKEY Mod4Mask  // Windows key for meta
 #define AltMask Mod1Mask  // Alt key
 #define TAGKEYS(KEY,TAG) \
-	{ NULL,                       KEY,      view,           {.ui = 1 << TAG} }, \
+	{ MODKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \
 	{ ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
 	{ AltMask,             KEY,      tag,            {.ui = 1 << TAG} }, \
 	{ ControlMask|AltMask, KEY,      toggletag,      {.ui = 1 << TAG} },
@@ -99,7 +99,7 @@ static Key keys[] = {
 	{ MODKEY|ControlMask,           XK_equal,  setmfact,       {.f = +0.05} },
 	{ MODKEY,                       XK_Return, zoom,           {0} },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
-	{ MODKEY|AltMask,               XK_c,      killclient,     {0} },
+	{ AltMask,                      XK_F4,      killclient,     {0} },
 	{ MODKEY|AltMask,               XK_t,      setlayout,      {.v = &layouts[0]} },
 	{ MODKEY|AltMask,               XK_f,      setlayout,      {.v = &layouts[1]} },
 	{ MODKEY|AltMask,               XK_m,      setlayout,      {.v = &layouts[2]} },
@@ -115,15 +115,15 @@ static Key keys[] = {
 	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
 	{ MODKEY,                       XK_Left,   tagmon,         {.i = -1 } },
 	{ MODKEY,                       XK_Right,  tagmon,         {.i = +1 } },
-	TAGKEYS(                        XK_F1,                      0)
-	TAGKEYS(                        XK_F2,                      1)
-	TAGKEYS(                        XK_F3,                      2)
-	TAGKEYS(                        XK_F4,                      3)
-	TAGKEYS(                        XK_F5,                      4)
-	TAGKEYS(                        XK_F6,                      5)
-	TAGKEYS(                        XK_F7,                      6)
-	TAGKEYS(                        XK_F8,                      7)
- 	TAGKEYS(                        XK_F9,                      8)
+	TAGKEYS(                        XK_1,                      0)
+	TAGKEYS(                        XK_2,                      1)
+	TAGKEYS(                        XK_3,                      2)
+	TAGKEYS(                        XK_4,                      3)
+	TAGKEYS(                        XK_5,                      4)
+	TAGKEYS(                        XK_6,                      5)
+	TAGKEYS(                        XK_7,                      6)
+	TAGKEYS(                        XK_8,                      7)
+ 	TAGKEYS(                        XK_9,                      8)
 	{ AltMask|ControlMask,          XK_Delete, quit,           {0} },
 	// { AltMask|ControlMask,          XK_q,      spawn,          {.v = keepasscmd } },
 };
