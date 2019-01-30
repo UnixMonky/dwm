@@ -13,7 +13,10 @@ Original: https://dwm.suckless.org/
   - https://dwm.suckless.org/patches/autostart/
 - Cycle Layouts
   - https://dwm.suckless.org/patches/cyclelayout/
-
+- Per Tag Layouts
+  - https://dwm.suckless.org/patches/pertag/
+- Colored Status Text
+  - https://dwm.suckless.org/patches/statuscolors/
 
 ## Keyboard Customizations
 Meta Key (⊞) is reset to the Windows key
