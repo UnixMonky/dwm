@@ -1,5 +1,8 @@
 /* See LICENSE file for copyright and license details. */
 
+/* includes */
+#include <X11/XF86keysym.h>
+
 /* appearance */
 static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
@@ -129,9 +132,9 @@ static Key keys[] = {
  	TAGKEYS(                        XK_9,                      8)
 	{ AltMask|ControlMask,          XK_Delete, quit,           {0} },
 	// { AltMask|ControlMask,          XK_q,      spawn,          {.v = keepasscmd } },
-	{ NULL,                         XK_XF86AudioRaiseVolume, spawn, {.v = volupcmd } },
-	{ NULL,                         XK_XF86AudioLowerVolume, spawn, {.v = voldowncmd } },
-	{ NULL,                         XK_XF86AudioMute,        spawn, {.v = volmutecmd } },
+	{ 0,              XF86XK_AudioRaiseVolume, spawn,          {.v = volupcmd } },
+	{ 0,              XF86XK_AudioLowerVolume, spawn,          {.v = voldowncmd } },
+	{ 0,              XF86XK_AudioMute,        spawn,          {.v = volmutecmd } },
 };
 
 /* button definitions */
