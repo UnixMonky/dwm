@@ -13,6 +13,12 @@ Original: https://dwm.suckless.org/
   - https://dwm.suckless.org/patches/autostart/
 - Cycle Layouts
   - https://dwm.suckless.org/patches/cyclelayout/
+- Per Tag Layouts
+  - https://dwm.suckless.org/patches/pertag/
+- Colored Status Text
+  - https://dwm.suckless.org/patches/statuscolors/
+- Fancy Bar
+  - https://dwm.suckless.org/patches/fancybar/
 
 
 ## Keyboard Customizations

@@ -129,6 +129,9 @@ static Key keys[] = {
  	TAGKEYS(                        XK_9,                      8)
 	{ AltMask|ControlMask,          XK_Delete, quit,           {0} },
 	// { AltMask|ControlMask,          XK_q,      spawn,          {.v = keepasscmd } },
+	{ NULL,                         XF86AudioRaiseVolume, spawn, {.v = volupcmd } },
+	{ NULL,                         XF86AudioLowerVolume, spawn, {.v = voldowncmd } },
+	{ NULL,                         XF86AudioMute,        spawn, {.v = volmutecmd } },
 };
 
 /* button definitions */
