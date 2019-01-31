@@ -59,7 +59,6 @@ Focus to previous Display | [,]
 Move client to next Display | [➡]
 Move Client to previous Display | [⬅]
 Lock Screen | [l]
-Mouse Paste | [CapsLock]
 Quit dwm | [CRTL]+[ALT]+[DEL]
 
 ## Patching process
