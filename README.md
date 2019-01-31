@@ -57,6 +57,7 @@ Focus to next Display | [.]
 Focus to previous Display | [,]
 Move client to next Display | [➡]
 Move Client to previous Display | [⬅]
+Lock Screen | [l]
 Quit dwm | [CRTL]+[ALT]+[DEL]
 
 ## Patching process

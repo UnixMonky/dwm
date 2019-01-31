@@ -89,6 +89,7 @@ static const char *termcmd[]  = { "st", NULL };
 static const char *volupcmd[]  = { "pactl", "set-sink-volume", "0", "+2%", NULL };
 static const char *voldowncmd[]  = { "pactl", "set-sink-volume", "0", "-2%", NULL };
 static const char *volmutecmd[]  = { "pactl", "set-sink-mute", "0", "toggle", NULL };
+static const char *slockcmd[]  = { "slock", NULL };
 // static const char *keepasscmd[] = { "keepass2", "--auto-type", NULL };
 
 static Key keys[] = {
@@ -135,6 +136,7 @@ static Key keys[] = {
 	{ 0,              XF86XK_AudioRaiseVolume, spawn,          {.v = volupcmd } },
 	{ 0,              XF86XK_AudioLowerVolume, spawn,          {.v = voldowncmd } },
 	{ 0,              XF86XK_AudioMute,        spawn,          {.v = volmutecmd } },
+	{ MODKEY,                       XK_l,      spawn,          {.v = slockcmd } },
 };
 
 /* button definitions */
