@@ -31,6 +31,7 @@ Function | Keybinding
 dmenu | [Space]
 Menu Bar Toggle | [b]
 Terminal | [t]
+Surf web browser | [w]
 Next Window | [ALT]+[Tab]
 Previous Window | [ALT]+[SHIFT]+[TAB]
 Add to Master  | [=]
