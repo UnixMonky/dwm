@@ -93,6 +93,7 @@ static const char *slockcmd[]  = { "slock", NULL };
 static const char *surfcmd[]  = { "tabbed", "surf", "-pe", NULL };
 static const char *keepasscmd[] = { "keepass2", NULL };
 static const char *keepassautotypecmd[] = { "keepass2", "--auto-type", NULL };
+static const char *suspendcmd[] = { "systemctl", "suspend", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -138,6 +139,7 @@ static Key keys[] = {
 	{ 0,              XF86XK_AudioRaiseVolume, spawn,          {.v = volupcmd } },
 	{ 0,              XF86XK_AudioLowerVolume, spawn,          {.v = voldowncmd } },
 	{ 0,              XF86XK_AudioMute,        spawn,          {.v = volmutecmd } },
+	{ 0,              XF86XK_PowerOff,        spawn,           {.v = suspendcmd } },
 	{ MODKEY,                       XK_l,      spawn,          {.v = slockcmd } },
 	{ MODKEY,                       XK_w,      spawn,          {.v = surfcmd } },
 	{ AltMask|ControlMask,          XK_k,      spawn,          {.v = keepasscmd } },
