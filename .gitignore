@@ -1,5 +1,3 @@
-drw.o
+*.o
 dwcm.
 dwm
-dwm.o
-util.o
