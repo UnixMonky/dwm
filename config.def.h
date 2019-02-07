@@ -52,7 +52,7 @@ static const Rule rules[] = {
 	{ "Slack",       NULL,       NULL,       1 << 7,       1,            0 },
 	{ "discord",     NULL,       NULL,       1 << 7,       1,            0 },
 	{ "Skype",       NULL,       NULL,       1 << 7,       1,            0 },
-	{ "KeePass2",    NULL,       NULL,       1 << 7,       1,            0 },
+	{ "KeePass2",    NULL,       NULL,       1 << 7,       1,            -1 },
 };
 
 /* layout(s) */
