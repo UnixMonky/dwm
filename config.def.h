@@ -80,7 +80,7 @@ static const Layout layouts[] = {
 #define TAGKEYS(KEY,TAG) \
 	{ MODKEY,              KEY,      view,           {.ui = 1 << TAG} }, \
 	{ ControlMask,         KEY,      toggleview,     {.ui = 1 << TAG} }, \
-	{ AltMask,             KEY,      tag,            {.ui = 1 << TAG} }, \
+	{ MODKEY|AltMask,             KEY,      tag,            {.ui = 1 << TAG} }, \
 	{ ControlMask|AltMask, KEY,      toggletag,      {.ui = 1 << TAG} },
 
 /* helper for spawning shell commands in the pre dwm-5.0 fashion */
@@ -102,7 +102,6 @@ static const char *suspendcmd[] = { "systemctl", "suspend", NULL };
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ ControlMask,                  XK_space,  spawn,          {.v = dmenucmd } },
-//	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_t,      spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_bracketleft,  rotatestack, {.i = +1 } },
@@ -111,11 +110,10 @@ static Key keys[] = {
 	{ Mod1Mask|ShiftMask,           XK_Tab,    focusstack,     {.i = -1 } },
 	{ MODKEY,                       XK_equal,  incnmaster,     {.i = +1 } },
 	{ MODKEY,                       XK_minus,  incnmaster,     {.i = -1 } },
-	{ MODKEY|ControlMask,           XK_minus,  setmfact,       {.f = -0.05} },
-	{ MODKEY|ControlMask,           XK_equal,  setmfact,       {.f = +0.05} },
+	{ MODKEY|AltMask,               XK_minus,  setmfact,       {.f = -0.05} },
+	{ MODKEY|AltMask,               XK_equal,  setmfact,       {.f = +0.05} },
 	{ MODKEY,                       XK_Return, zoom,           {0} },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
-	{ AltMask,                      XK_F4,      killclient,     {0} },
 	{ MODKEY|AltMask,               XK_o,      setlayout,      {.v = &layouts[0]} },
 	{ MODKEY|AltMask,               XK_t,      setlayout,      {.v = &layouts[1]} },
 	{ MODKEY|AltMask,               XK_f,      setlayout,      {.v = &layouts[2]} },
@@ -127,7 +125,7 @@ static Key keys[] = {
 	{ MODKEY|AltMask,               XK_0,      setlayout,      {0} },
 	{ MODKEY,                       XK_backslash, togglefloating, {0} },
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
-	{ MODKEY|ControlMask,           XK_0,      tag,            {.ui = ~0 } },
+	{ MODKEY|AltMask,               XK_0,      tag,            {.ui = ~0 } },
 	{ MODKEY,                       XK_comma,  focusmon,       {.i = -1 } },
 	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
 	{ MODKEY,                       XK_Left,   tagmon,         {.i = -1 } },
@@ -141,16 +139,17 @@ static Key keys[] = {
 	TAGKEYS(                        XK_7,                      6)
 	TAGKEYS(                        XK_8,                      7)
  	TAGKEYS(                        XK_9,                      8)
-	{ AltMask|ControlMask,          XK_Delete, quit,           {0} },
-	// { AltMask|ControlMask,          XK_q,      spawn,          {.v = keepasscmd } },
+	/* Media and special Keyboard Keys */
 	{ 0,              XF86XK_AudioRaiseVolume, spawn,          {.v = volupcmd } },
 	{ 0,              XF86XK_AudioLowerVolume, spawn,          {.v = voldowncmd } },
 	{ 0,              XF86XK_AudioMute,        spawn,          {.v = volmutecmd } },
-/*	{ 0,              XF86XK_PowerOff,         spawn,          {.v = suspendcmd } }, */
+	/* Custom Commands */
 	{ MODKEY,                       XK_l,      spawn,          {.v = slockcmd } },
 	{ MODKEY,                       XK_w,      spawn,          {.v = surfcmd } },
 	{ AltMask|ControlMask,          XK_k,      spawn,          {.v = keepasscmd } },
 	{ AltMask|ControlMask,          XK_a,      spawn,          {.v = keepassautotypecmd } },
+	{ AltMask,                      XK_F4,     killclient,     {0} }, /* exit client */
+	{ AltMask|ControlMask,          XK_Delete, quit,           {0} }, /* quit dwm */
 };
 
 /* button definitions */
