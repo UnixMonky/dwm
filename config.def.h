@@ -50,10 +50,10 @@ static const Rule rules[] = {
 	{ "Gimp",        NULL,       NULL,       0,            1,           -1 },
 	{ "Firefox",     NULL,       NULL,       1 << 8,       0,           -1 },
 	{ "Mailspring",  NULL,       NULL,       1 << 0,       0,            0 },
-	{ "MineTime",    NULL,       NULL,       1 << 0,       1,            0 },
-	{ "Slack",       NULL,       NULL,       1 << 7,       1,            0 },
-	{ "discord",     NULL,       NULL,       1 << 7,       1,            0 },
-	{ "Skype",       NULL,       NULL,       1 << 7,       1,            0 },
+	{ "MineTime",    NULL,       NULL,       1 << 0,       0,            0 },
+	{ "Slack",       NULL,       NULL,       1 << 7,       0,            0 },
+	{ "discord",     NULL,       NULL,       1 << 7,       0,            0 },
+	{ "Skype",       NULL,       NULL,       0,            0,            0 },
 	{ "KeePass2",    NULL,       NULL,       0,            1,            -1 },
 };
 
