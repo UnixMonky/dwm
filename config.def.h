@@ -70,7 +70,7 @@ static const Layout layouts[] = {
 	{ "><>",      NULL },                    /* no layout function means floating behavior */
 	{ "[M]",      monocle },
 	{ ">M>",      centeredfloatingmaster },
-	{ "HHH",      grid },
+	{ "[⊞]",      grid },
 	{ NULL,       NULL },
 };
 
