@@ -98,7 +98,7 @@ static const char *slockcmd[]  = { "slock", NULL };
 static const char *surfcmd[]  = { "tabbed", "surf", "-pe", NULL };
 static const char *keepasscmd[] = { "keepass2", NULL };
 static const char *keepassautotypecmd[] = { "keepass2", "--auto-type", NULL };
-static const char *suspendcmd[] = { "systemctl", "suspend", NULL };
+// static const char *suspendcmd[] = { "systemctl", "suspend", NULL };
 static const char *vifmcmd[] = { "vifm", NULL };
 
 static Key keys[] = {
@@ -152,7 +152,7 @@ static Key keys[] = {
 	{ AltMask|ControlMask,          XK_a,      spawn,          {.v = keepassautotypecmd } },
 	{ AltMask,                      XK_F4,     killclient,     {0} }, /* exit client */
 	{ AltMask|ControlMask,          XK_Delete, quit,           {0} }, /* quit dwm */
-	{ AltMask|ControlMask,          XK_backspace, self_restart, {0} }, /* restart dwm */
+	{ AltMask|ControlMask,          XK_BackSpace, self_restart, {0} }, /* restart dwm */
 	{ MODKEY,                       XK_e,      spawn,          {.v = vifmcmd } },
 };
 
