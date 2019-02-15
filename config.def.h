@@ -98,6 +98,7 @@ static const char *surfcmd[]  = { "tabbed", "surf", "-pe", NULL };
 static const char *keepasscmd[] = { "keepass2", NULL };
 static const char *keepassautotypecmd[] = { "keepass2", "--auto-type", NULL };
 static const char *suspendcmd[] = { "systemctl", "suspend", NULL };
+static const char *vifmcmd[] = { "vifm", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -119,7 +120,7 @@ static Key keys[] = {
 	{ MODKEY|AltMask,               XK_f,      setlayout,      {.v = &layouts[2]} },
 	{ MODKEY|AltMask,               XK_m,      setlayout,      {.v = &layouts[3]} },
 	{ MODKEY|AltMask,               XK_u,      setlayout,      {.v = &layouts[4]} },
-	{ MODKEY|AltMask,                XK_g,      setlayout,      {.v = &layouts[5]} },
+	{ MODKEY|AltMask,               XK_g,      setlayout,      {.v = &layouts[5]} },
 	{ MODKEY|AltMask,		            XK_bracketleft, cyclelayout, {.i = -1 } },
 	{ MODKEY|AltMask,               XK_bracketright, cyclelayout, {.i = +1 } },
 	{ MODKEY|AltMask,               XK_0,      setlayout,      {0} },
@@ -150,6 +151,7 @@ static Key keys[] = {
 	{ AltMask|ControlMask,          XK_a,      spawn,          {.v = keepassautotypecmd } },
 	{ AltMask,                      XK_F4,     killclient,     {0} }, /* exit client */
 	{ AltMask|ControlMask,          XK_Delete, quit,           {0} }, /* quit dwm */
+	{ MODKEY,                       XK_e,      spawn,          {.v = vifmcmd } },
 };
 
 /* button definitions */
