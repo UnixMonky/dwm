@@ -2,6 +2,7 @@
 
 /* includes */
 #include <X11/XF86keysym.h>
+#include "selfrestart.c"
 
 /* appearance */
 static const unsigned int borderpx  = 1;        /* border pixel of windows */
@@ -151,6 +152,7 @@ static Key keys[] = {
 	{ AltMask|ControlMask,          XK_a,      spawn,          {.v = keepassautotypecmd } },
 	{ AltMask,                      XK_F4,     killclient,     {0} }, /* exit client */
 	{ AltMask|ControlMask,          XK_Delete, quit,           {0} }, /* quit dwm */
+	{ AltMask|ControlMask,          XK_backspace, self_restart, {0} }, /* restart dwm */
 	{ MODKEY,                       XK_e,      spawn,          {.v = vifmcmd } },
 };
 
