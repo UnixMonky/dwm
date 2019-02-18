@@ -100,7 +100,7 @@ static const char *surfcmd[]  = { "tabbed", "surf", "-pe", NULL };
 static const char *keepasscmd[] = { "keepass2", NULL };
 static const char *keepassautotypecmd[] = { "keepass2", "--auto-type", NULL };
 // static const char *suspendcmd[] = { "systemctl", "suspend", NULL };
-static const char *vifmcmd[] = { "vifm", NULL };
+static const char *vifmcmd[] = { "vifm", "~", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
