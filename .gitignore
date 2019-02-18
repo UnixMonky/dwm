@@ -1,3 +1,4 @@
 *.o
 dwcm.
 dwm
+config.def.h
