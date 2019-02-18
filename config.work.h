@@ -82,7 +82,7 @@ static const Layout layouts[] = {
 #define TAGKEYS(KEY,TAG) \
 	{ MODKEY,              KEY,      view,           {.ui = 1 << TAG} }, \
 	{ ControlMask,         KEY,      toggleview,     {.ui = 1 << TAG} }, \
-	{ MODKEY|AltMask,             KEY,      tag,            {.ui = 1 << TAG} }, \
+	{ MODKEY|AltMask,      KEY,      tag,            {.ui = 1 << TAG} }, \
 	{ ControlMask|AltMask, KEY,      toggletag,      {.ui = 1 << TAG} },
 
 /* helper for spawning shell commands in the pre dwm-5.0 fashion */
@@ -100,7 +100,7 @@ static const char *surfcmd[]  = { "tabbed", "surf", "-pe", NULL };
 static const char *keepasscmd[] = { "keepass2", NULL };
 static const char *keepassautotypecmd[] = { "keepass2", "--auto-type", NULL };
 // static const char *suspendcmd[] = { "systemctl", "suspend", NULL };
-static const char *vifmcmd[] = { "vifm", "~", NULL };
+static const char *vifmcmd[] = { "st", "vifm", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
