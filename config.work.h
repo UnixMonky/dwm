@@ -92,15 +92,23 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "st", NULL };
-static const char *volupcmd[]  = { "pactl", "set-sink-volume", "0", "+2%", NULL };
-static const char *voldowncmd[]  = { "pactl", "set-sink-volume", "0", "-2%", NULL };
-static const char *volmutecmd[]  = { "pactl", "set-sink-mute", "0", "toggle", NULL };
 static const char *slockcmd[]  = { "slock", NULL };
 static const char *surfcmd[]  = { "tabbed", "surf", "-pe", NULL };
 static const char *keepasscmd[] = { "keepass2", NULL };
 static const char *keepassautotypecmd[] = { "keepass2", "--auto-type", NULL };
 // static const char *suspendcmd[] = { "systemctl", "suspend", NULL };
 static const char *vifmcmd[] = { "st", "vifm", NULL };
+static const char *scrotfullcmd[] = { "scrot", "/home/matt/Pictures/Screenshots/%Y%m%d_%H%M%S_scrot.png", NULL };
+static const char *scrotselectcmd[] = { "sleep", "0.1", "&&" ,"scrot", "-s", "/home/matt/Pictures/Screenshots/%Y%m%d_%H%M%S_scrot.png", NULL };
+// Media player controls by playerctl command (https://github.com/acrisci/playerctl)
+static const char *mediaplaycmd[] = { "playerctl", "play-pause", NULL };
+static const char *mediastopcmd[] = { "playerctl", "stop", NULL };
+static const char *medianextcmd[] = { "playerctl", "next", NULL };
+static const char *mediaprevcmd[] = { "playerctl", "previous", NULL };
+// volume media keys
+static const char *volupcmd[]  = { "pactl", "set-sink-volume", "0", "+2%", NULL };
+static const char *voldowncmd[]  = { "pactl", "set-sink-volume", "0", "-2%", NULL };
+static const char *volmutecmd[]  = { "pactl", "set-sink-mute", "0", "toggle", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -146,6 +154,11 @@ static Key keys[] = {
 	{ 0,              XF86XK_AudioRaiseVolume, spawn,          {.v = volupcmd } },
 	{ 0,              XF86XK_AudioLowerVolume, spawn,          {.v = voldowncmd } },
 	{ 0,              XF86XK_AudioMute,        spawn,          {.v = volmutecmd } },
+	{ 0,              XF86XK_AudioPlay,        spawn,          {.v = mediaplaycmd } },
+	{ 0,              XF86XK_AudioPause,        spawn,         {.v = mediaplaycmd } },
+	{ 0,              XF86XK_AudioStop,        spawn,          {.v = mediastopcmd } },
+	{ 0,              XF86XK_AudioNext,        spawn,          {.v = medianextcmd } },
+	{ 0,              XF86XK_AudioPrev,        spawn,          {.v = mediaprevcmd } },
 	/* Custom Commands */
 	{ MODKEY,                       XK_l,      spawn,          {.v = slockcmd } },
 	{ MODKEY,                       XK_w,      spawn,          {.v = surfcmd } },
@@ -155,6 +168,8 @@ static Key keys[] = {
 	{ AltMask|ControlMask,          XK_Delete, quit,           {0} }, /* quit dwm */
 	{ AltMask|ControlMask,          XK_BackSpace, self_restart, {0} }, /* restart dwm */
 	{ MODKEY,                       XK_e,      spawn,          {.v = vifmcmd } },
+	{ 0,                            XK_Print,  spawn,          {.v = scrotselectcmd } },
+	{ ControlMask,                  XK_Print,  spawn,          {.v = scrotfullcmd } },
 };
 
 /* button definitions */
