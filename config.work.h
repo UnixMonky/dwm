@@ -99,7 +99,7 @@ static const char *keepassautotypecmd[] = { "keepass2", "--auto-type", NULL };
 // static const char *suspendcmd[] = { "systemctl", "suspend", NULL };
 static const char *vifmcmd[] = { "st", "vifm", NULL };
 static const char *scrotfullcmd[] = { "scrot", "/home/matt/Pictures/Screenshots/%Y%m%d_%H%M%S_scrot.png", NULL };
-static const char *scrotselectcmd[] = { "sleep", "0.1", "&&" ,"scrot", "-s", "/home/matt/Pictures/Screenshots/%Y%m%d_%H%M%S_scrot.png", NULL };
+static const char *scrotselectcmd[] = { "/home/matt/scripts/screenshot.sh", NULL };
 // Media player controls by playerctl command (https://github.com/acrisci/playerctl)
 static const char *mediaplaycmd[] = { "playerctl", "play-pause", NULL };
 static const char *mediastopcmd[] = { "playerctl", "stop", NULL };
