@@ -54,7 +54,7 @@ static const Rule rules[] = {
 	{ "MineTime",    NULL,       NULL,       1 << 0,       0,            0 },
 	{ "Slack",       NULL,       NULL,       1 << 7,       0,            0 },
 	{ "discord",     NULL,       NULL,       1 << 7,       0,            0 },
-	{ "Skype",       NULL,       NULL,       0,            0,            0 },
+	{ "Skype",       NULL,       NULL,       0,            1,            0 },
 	{ "KeePass2",    NULL,       NULL,       0,            1,            -1 },
 	{ "Chatty",      NULL,       NULL,       0,            1,            -1 },
 };
