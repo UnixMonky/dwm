@@ -47,22 +47,23 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class         instance    title       tags mask     isfloating   monitor */
-	{ "Gimp",        NULL,       NULL,       0,            1,           -1 },
-	{ "Firefox",     NULL,       NULL,       1 << 8,       0,           -1 },
-	{ "Mailspring",  NULL,       NULL,       1 << 0,       0,            0 },
-	{ "MineTime",    NULL,       NULL,       1 << 0,       0,            0 },
-	{ "Slack",       NULL,       NULL,       1 << 7,       0,            0 },
-	{ "discord",     NULL,       NULL,       1 << 7,       0,            0 },
-	{ "Skype",       NULL,       NULL,       0,            1,            0 },
-	{ "KeePass2",    NULL,       NULL,       0,            1,            -1 },
-	{ "Chatty",      NULL,       NULL,       0,            1,            -1 },
+	/* class              instance    title       tags mask     isfloating   monitor */
+	{ "Gimp",             NULL,       NULL,       0,            1,           -1 },
+	{ "Firefox",          NULL,       NULL,       1 << 8,       0,           -1 },
+	{ "Mailspring",       NULL,       NULL,       1 << 0,       0,            0 },
+	{ "MineTime",         NULL,       NULL,       1 << 0,       0,            0 },
+	{ "Slack",            NULL,       NULL,       1 << 7,       0,            0 },
+	{ "discord",          NULL,       NULL,       1 << 7,       0,            0 },
+	{ "Skype",            NULL,       NULL,       1 << 7,       1,            0 },
+	{ "teams-for-linux",  NULL,       NULL,       1 << 7,       0,            0 },
+	{ "KeePass2",         NULL,       NULL,       0,            1,           -1 },
+	{ "Chatty",           NULL,       NULL,       0,            1,           -1 },
 };
 
 /* layout(s) */
 static const float mfact     = 0.55; /* factor of master area size [0.05..0.95] */
 static const int nmaster     = 1;    /* number of clients in master area */
-static const int resizehints = 1;    /* 1 means respect size hints in tiled resizals */
+static const int resizehints = 0;    /* 1 means respect size hints in tiled resizals */
 
 #include "layouts.c"
 static const Layout layouts[] = {
