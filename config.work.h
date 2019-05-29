@@ -55,7 +55,7 @@ static const Rule rules[] = {
 	{ "Slack",            NULL,       NULL,       1 << 7,       0,            0 },
 	{ "discord",          NULL,       NULL,       1 << 7,       0,            0 },
 	{ "Skype",            NULL,       NULL,       1 << 7,       1,            0 },
-	{ "teams-for-linux",  NULL,       NULL,       1 << 7,       0,            0 },
+	{ "teams-for-linux",  NULL,       NULL,       1 << 1,       0,            0 },
 	{ "KeePass2",         NULL,       NULL,       0,            1,           -1 },
 	{ "Chatty",           NULL,       NULL,       0,            1,           -1 },
 };
@@ -110,6 +110,8 @@ static const char *mediaprevcmd[] = { "playerctl", "previous", NULL };
 static const char *volupcmd[]  = { "pactl", "set-sink-volume", "0", "+2%", NULL };
 static const char *voldowncmd[]  = { "pactl", "set-sink-volume", "0", "-2%", NULL };
 static const char *volmutecmd[]  = { "pactl", "set-sink-mute", "0", "toggle", NULL };
+// custom scripts for various things
+static const char *btheadset[] = { "/home/scripts/bt.sh", "flip", NULL};
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -160,6 +162,7 @@ static Key keys[] = {
 	{ 0,              XF86XK_AudioStop,        spawn,          {.v = mediastopcmd } },
 	{ 0,              XF86XK_AudioNext,        spawn,          {.v = medianextcmd } },
 	{ 0,              XF86XK_AudioPrev,        spawn,          {.v = mediaprevcmd } },
+	{ 0,              XF86XK_Tools,            spawn,          {.v = btheadset } },
 	/* Custom Commands */
 	{ MODKEY,                       XK_l,      spawn,          {.v = slockcmd } },
 	{ MODKEY,                       XK_w,      spawn,          {.v = surfcmd } },
