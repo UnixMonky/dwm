@@ -55,6 +55,7 @@ static const Rule rules[] = {
 	{ "Slack",            NULL,       NULL,       1 << 7,       0,            0 },
 	{ "discord",          NULL,       NULL,       1 << 7,       0,            0 },
 	{ "Skype",            NULL,       NULL,       1 << 7,       1,            0 },
+	{ "YakYak",           NULL,       NULL,       1 << 7,       0,            0 },
 	{ "teams-for-linux",  NULL,       NULL,       1 << 1,       0,            0 },
 	{ "KeePass2",         NULL,       NULL,       0,            1,           -1 },
 	{ "Chatty",           NULL,       NULL,       0,            1,           -1 },
