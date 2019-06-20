@@ -48,17 +48,23 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class              instance    title       tags mask     isfloating   monitor */
-	{ "Gimp",             NULL,       NULL,       0,            1,           -1 },
-	{ "Firefox",          NULL,       NULL,       1 << 8,       0,           -1 },
+	// Display 1, tag 1
 	{ "Mailspring",       NULL,       NULL,       1 << 0,       0,            0 },
 	{ "MineTime",         NULL,       NULL,       1 << 0,       0,            0 },
+	// Display 1, tag 2
+	{ "teams-for-linux",  NULL,       NULL,       1 << 1,       0,            0 },
+	// Display 1, tag 3
+	{ "Skype",            NULL,       NULL,       1 << 2,       0,            0 },
+	{ "yakyak",           NULL,       NULL,       1 << 2,       0,            0 },
+	// Display 1, tag 8
 	{ "Slack",            NULL,       NULL,       1 << 7,       0,            0 },
 	{ "discord",          NULL,       NULL,       1 << 7,       0,            0 },
-	{ "Skype",            NULL,       NULL,       1 << 7,       1,            0 },
-	{ "YakYak",           NULL,       NULL,       1 << 7,       0,            0 },
-	{ "teams-for-linux",  NULL,       NULL,       1 << 1,       0,            0 },
+	// Any display, tag 9
+	{ "Firefox",          NULL,       NULL,       1 << 8,       0,           -1 },
+	// Any display, force floating
 	{ "KeePass2",         NULL,       NULL,       0,            1,           -1 },
 	{ "Chatty",           NULL,       NULL,       0,            1,           -1 },
+	{ "Gimp",             NULL,       NULL,       0,            1,           -1 },
 };
 
 /* layout(s) */
