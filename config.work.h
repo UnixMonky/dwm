@@ -52,7 +52,7 @@ static const Rule rules[] = {
 	{ "Mailspring",       NULL,       NULL,       1 << 0,       0,            0 },
 	{ "MineTime",         NULL,       NULL,       1 << 0,       0,            0 },
 	// Display 1, tag 2
-	{ "teams-for-linux",  NULL,       NULL,       1 << 1,       0,            0 },
+	{ "Teams for Linux",  NULL,       NULL,       1 << 1,       0,            0 },
 	// Display 1, tag 3
 	{ "Skype",            NULL,       NULL,       1 << 2,       0,            0 },
 	{ "yakyak",           NULL,       NULL,       1 << 2,       0,            0 },
@@ -102,12 +102,13 @@ static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont,
 static const char *termcmd[]  = { "st", NULL };
 static const char *slockcmd[]  = { "slock", NULL };
 static const char *surfcmd[]  = { "tabbed", "surf", "-pe", NULL };
-static const char *keepasscmd[] = { "keepass2", NULL };
-static const char *keepassautotypecmd[] = { "keepass2", "--auto-type", NULL };
+static const char *keepasscmd[] = { "keepass", NULL };
+static const char *keepassautotypecmd[] = { "keepass", "--auto-type", NULL };
 // static const char *suspendcmd[] = { "systemctl", "suspend", NULL };
 static const char *vifmcmd[] = { "st", "vifm", NULL };
-static const char *scrotfullcmd[] = { "scrot", "/home/matt/Pictures/Screenshots/%Y%m%d_%H%M%S_scrot.png", NULL };
-static const char *scrotselectcmd[] = { "/home/matt/scripts/screenshot.sh", NULL };
+static const char *screenshotcmd[] = { "scrot", "--select", "~/Pictures/Screenshots/screenshot_%Y-%m-%d_%H-%M-%S.png", NULL };
+static const char *screenshotfocusedcmd[] = { "scrot", "--focused", "~/Pictures/Screenshots/screenshot_%Y-%m-%d_%H-%M-%S.png", NULL };
+static const char *screenshotfullcmd[] = { "scrot", "--multidisp", "~/Pictures/Screenshots/screenshot_%Y-%m-%d_%H-%M-%S.png", NULL };
 // Media player controls by playerctl command (https://github.com/acrisci/playerctl)
 static const char *mediaplaycmd[] = { "playerctl", "play-pause", NULL };
 static const char *mediastopcmd[] = { "playerctl", "stop", NULL };
@@ -118,7 +119,7 @@ static const char *volupcmd[]  = { "pactl", "set-sink-volume", "0", "+2%", NULL 
 static const char *voldowncmd[]  = { "pactl", "set-sink-volume", "0", "-2%", NULL };
 static const char *volmutecmd[]  = { "pactl", "set-sink-mute", "0", "toggle", NULL };
 // custom scripts for various things
-static const char *btheadset[] = { "/home/scripts/bt.sh", "flip", NULL};
+static const char *btheadset[] = { "/home/matt/scripts/bt.sh", "flip", NULL};
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -179,8 +180,9 @@ static Key keys[] = {
 	{ AltMask|ControlMask,          XK_Delete, quit,           {0} }, /* quit dwm */
 	{ AltMask|ControlMask,          XK_BackSpace, self_restart, {0} }, /* restart dwm */
 	{ MODKEY,                       XK_e,      spawn,          {.v = vifmcmd } },
-	{ 0,                            XK_Print,  spawn,          {.v = scrotselectcmd } },
-	{ ControlMask,                  XK_Print,  spawn,          {.v = scrotfullcmd } },
+	{ 0,                            XK_Print,  spawn,          {.v = screenshotcmd } },
+	{ ControlMask,                  XK_Print,  spawn,          {.v = screenshotfocusedcmd } },
+	{ ShiftMask|ControlMask,        XK_Print,  spawn,          {.v = screenshotfullcmd } },
 };
 
 /* button definitions */
