@@ -15,7 +15,7 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 // static const char *fonts[]          = { "monospace:size=10" };
 static const char *fonts[]          = {
-	"DejaVu Sans Mono:pixelsize=14",
+	"L Sans Mono:pixelsize=14",
 	"Material Design Icons:pixelsize=14",
 };
 static const char dmenufont[]       = "monospace:size=10";
@@ -28,7 +28,6 @@ static const char col_black[]       = "#000000";
 static const char col_red[]         = "#ff0000";
 static const char col_yellow[]      = "#ffff00";
 static const char col_white[]       = "#ffffff";
-
 static const char *colors[][3]      = {
 	/*					fg         bg          border   */
 	// [SchemeNorm] =	 { col_gray3, col_gray1,  col_gray2 },
@@ -51,18 +50,19 @@ static const Rule rules[] = {
 	// Display 1, tag 1
 	{ "Mailspring",       NULL,       NULL,       1 << 0,       0,            0 },
 	{ "MineTime",         NULL,       NULL,       1 << 0,       0,            0 },
+	{ "teams-for-linux",  NULL,       NULL,       1 << 0,       0,            0 },
 	// Display 1, tag 2
-	{ "Teams for Linux",  NULL,       NULL,       1 << 1,       0,            0 },
+	{ "Skype",            NULL,       NULL,       1 << 1,       0,            0 },
+	{ "yakyak",           NULL,       NULL,       1 << 1,       0,            0 },
+	{ "discord",          NULL,       NULL,       1 << 1,       0,            0 },
 	// Display 1, tag 3
-	{ "Skype",            NULL,       NULL,       1 << 2,       0,            0 },
-	{ "yakyak",           NULL,       NULL,       1 << 2,       0,            0 },
 	// Display 1, tag 8
-	{ "Slack",            NULL,       NULL,       1 << 7,       0,            0 },
-	{ "discord",          NULL,       NULL,       1 << 7,       0,            0 },
+	// { "Slack",            NULL,       NULL,       1 << 7,       0,            0 },
 	// Any display, tag 9
-	{ "Firefox",          NULL,       NULL,       1 << 8,       0,           -1 },
+	{ "firefox",          NULL,       NULL,       1 << 8,       0,           -1 },
 	// Any display, force floating
 	{ "KeePass2",         NULL,       NULL,       0,            1,           -1 },
+	{ "Toggl Desktop",    NULL,       NULL,       0,            1,           -1 },
 	{ "Chatty",           NULL,       NULL,       0,            1,           -1 },
 	{ "Gimp",             NULL,       NULL,       0,            1,           -1 },
 };
