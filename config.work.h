@@ -56,13 +56,13 @@ static const Rule rules[] = {
 	{ "yakyak",           NULL,       NULL,       1 << 1,       0,            0 },
 	{ "discord",          NULL,       NULL,       1 << 1,       0,            0 },
 	// Display 1, tag 3
+	{ "CherryTree",       NULL,       NULL,       1 << 4,       1,           -1 },
 	// Display 1, tag 8
 	// { "Slack",            NULL,       NULL,       1 << 7,       0,            0 },
 	// Any display, tag 9
 	{ "firefox",          NULL,       NULL,       1 << 8,       0,           -1 },
 	// Any display, force floating
 	{ "KeePass2",         NULL,       NULL,       0,            1,           -1 },
-	{ "Toggl Desktop",    NULL,       NULL,       0,            1,           -1 },
 	{ "Chatty",           NULL,       NULL,       0,            1,           -1 },
 	{ "Gimp",             NULL,       NULL,       0,            1,           -1 },
 };
