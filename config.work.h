@@ -56,7 +56,7 @@ static const Rule rules[] = {
 	{ "yakyak",           NULL,       NULL,       1 << 1,       0,            0 },
 	{ "discord",          NULL,       NULL,       1 << 1,       0,            0 },
 	// Display 1, tag 3
-	{ "CherryTree",       NULL,       NULL,       1 << 4,       1,           -1 },
+	{ "CherryTree",       NULL,       NULL,       1 << 2,       1,            0 },
 	// Display 1, tag 8
 	// { "Slack",            NULL,       NULL,       1 << 7,       0,            0 },
 	// Any display, tag 9
