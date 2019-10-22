@@ -48,7 +48,8 @@ static const Rule rules[] = {
 	 */
 	/* class              instance    title       tags mask     isfloating   monitor */
 	// Display 1, tag 1
-	{ "Mailspring",       NULL,       NULL,       1 << 0,       0,            0 },
+	{ "Mailspring",       NULL,       NULL,       1 << 0,       1,            0 },  // all mailspring windows float
+	{ "Mailspring",       NULL,       "Mailspring",       1 << 0,       0,            0 }, // except the main one
 	{ "MineTime",         NULL,       NULL,       1 << 0,       0,            0 },
 	{ "teams-for-linux",  NULL,       NULL,       1 << 0,       0,            0 },
 	// Display 1, tag 2
@@ -56,7 +57,7 @@ static const Rule rules[] = {
 	{ "yakyak",           NULL,       NULL,       1 << 1,       0,            0 },
 	{ "discord",          NULL,       NULL,       1 << 1,       0,            0 },
 	// Display 1, tag 3
-	{ "CherryTree",       NULL,       NULL,       1 << 2,       1,            0 },
+	{ "Cherrytree",       NULL,       NULL,       1 << 2,       0,            0 },
 	// Display 1, tag 8
 	// { "Slack",            NULL,       NULL,       1 << 7,       0,            0 },
 	// Any display, tag 9
