@@ -121,6 +121,9 @@ static const char *voldowncmd[]  = { "pactl", "set-sink-volume", "0", "-2%", NUL
 static const char *volmutecmd[]  = { "pactl", "set-sink-mute", "0", "toggle", NULL };
 // custom scripts for various things
 static const char *btheadset[] = { "/home/matt/scripts/bt.sh", "flip", NULL};
+static const char *screenchange[] = { "autorandr", "--change", NULL};
+static const char *screendocked[] = { "autorandr", "--load", "docked", "--force", NULL};
+static const char *screenmobile[] = { "autorandr", "--load", "mobile", "--force", NULL};
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -184,6 +187,7 @@ static Key keys[] = {
 	{ 0,                            XK_Print,  spawn,          {.v = screenshotcmd } },
 	{ ControlMask,                  XK_Print,  spawn,          {.v = screenshotfocusedcmd } },
 	{ ShiftMask|ControlMask,        XK_Print,  spawn,          {.v = screenshotfullcmd } },
+	{ AltMask|ControlMask,          XK_Insert,      spawn,          {.v = screenchange } }, /* autorandr reset */
 };
 
 /* button definitions */
