@@ -48,7 +48,7 @@ static const Rule rules[] = {
 	 */
 	/* class              instance    title       tags mask     isfloating   monitor */
 	// Display 1, tag 1
-	{ "Cherrytree",       NULL,       NULL,       1 << 0,       1,            0 },
+	{ "Cherrytree",       NULL,       NULL,       1 << 0,       0,            0 },
 	{ "discord",          NULL,       NULL,       1 << 0,       0,            0 },
 	// Display 1, tag 2
 	// { "Skype",            NULL,       NULL,       1 << 1,       0,            0 },
@@ -114,9 +114,9 @@ static const char *mediastopcmd[] = { "playerctl", "stop", NULL };
 static const char *medianextcmd[] = { "playerctl", "next", NULL };
 static const char *mediaprevcmd[] = { "playerctl", "previous", NULL };
 // volume media keys
-static const char *volupcmd[]  = { "pactl", "set-sink-volume", "0", "+2%", NULL };
-static const char *voldowncmd[]  = { "pactl", "set-sink-volume", "0", "-2%", NULL };
-static const char *volmutecmd[]  = { "pactl", "set-sink-mute", "0", "toggle", NULL };
+static const char *volupcmd[]  = { "pactl", "set-sink-volume", "$(pacmd list-sinks |awk '/* index:/{print $3}')", "+2%", NULL };
+static const char *voldowncmd[]  = { "pactl", "set-sink-volume", "$(pacmd list-sinks |awk '/* index:/{print $3}')", "-2%", NULL };
+static const char *volmutecmd[]  = { "pactl", "set-sink-mute", "$(pacmd list-sinks |awk '/* index:/{print $3}')", "toggle", NULL };
 // custom scripts for various things
 static const char *btheadset[] = { "/home/matt/scripts/bt.sh", "flip", NULL};
 
