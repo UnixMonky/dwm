@@ -2,4 +2,5 @@
 dwcm.
 dwm
 config.def.h
+config.h
 .vscode
