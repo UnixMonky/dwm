@@ -15,7 +15,7 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 // static const char *fonts[]          = { "monospace:size=10" };
 static const char *fonts[]          = {
-	"L Sans Mono:pixelsize=14",
+	"Fira Mono:pixelsize=14",
 	"Material Design Icons:pixelsize=14",
 };
 static const char dmenufont[]       = "monospace:size=10";
@@ -28,14 +28,31 @@ static const char col_black[]       = "#000000";
 static const char col_red[]         = "#ff0000";
 static const char col_yellow[]      = "#ffff00";
 static const char col_white[]       = "#ffffff";
+
+// Solarized
+static const char sol_blue[]        = "#002B36";
+static const char sol_grey[]        = "#657b83";
+static const char sol_ltgrey[]      = "#93a1a1";
+
+// custom
+static const char cst_purple[]      = "#360168";
+static const char cst_pink[]        = "#690167";
+static const char cst_green[]       = "#336901";
+static const char col_mySel[]       = "#8b3e2f";
+
 static const char *colors[][3]      = {
 	/*					fg         bg          border   */
 	// [SchemeNorm] =	 { col_gray3, col_gray1,  col_gray2 },
 	// [SchemeSel]  =	 { col_gray4, col_cyan,   col_cyan },
-	[SchemeNorm] =	 { "#657b83", "#002b36",  "#002b36" },
-	[SchemeSel]  =	 { "#002b36", "#93a1a1",  "#93a1a1" },
-	[SchemeWarn] =	 { col_black, col_yellow, col_red },
-	[SchemeUrgent]=	 { col_white, col_red,    col_red },
+	// Solarized
+	// [SchemeNorm] =	 { sol_grey, sol_blue,    sol_blue   },
+	// [SchemeSel]  =	 { sol_blue, sol_ltgrey,  sol_ltgrey },
+	// Custom
+	[SchemeNorm] =	 { col_gray3,  col_gray1, col_black },
+	[SchemeSel]  =	 { col_yellow, col_mySel,   col_cyan   },
+	// other
+	[SchemeWarn] =	 { col_black, col_yellow, col_red    },
+	[SchemeUrgent]=	 { col_white, col_red,    col_red    },
 };
 
 /* tagging */
@@ -48,7 +65,8 @@ static const Rule rules[] = {
 	 */
 	/* class              instance    title       tags mask     isfloating   monitor */
 	// Display 1, tag 1
-	{ "Mailspring",       NULL,       NULL,       1 << 0,       0,            0 },
+	{ "Mailspring",       NULL,       NULL,       1 << 0,       1,            0 },  // all mailspring windows float
+	{ "Mailspring",       NULL,       "Mailspring",       1 << 0,       0,            0 }, // except the main one
 	{ "MineTime",         NULL,       NULL,       1 << 0,       0,            0 },
 	{ "teams-for-linux",  NULL,       NULL,       1 << 0,       0,            0 },
 	// Display 1, tag 2
@@ -56,7 +74,7 @@ static const Rule rules[] = {
 	{ "yakyak",           NULL,       NULL,       1 << 1,       0,            0 },
 	{ "discord",          NULL,       NULL,       1 << 1,       0,            0 },
 	// Display 1, tag 3
-	{ "CherryTree",       NULL,       NULL,       1 << 4,       1,           -1 },
+	{ "Cherrytree",       NULL,       NULL,       1 << 2,       0,            0 },
 	// Display 1, tag 8
 	// { "Slack",            NULL,       NULL,       1 << 7,       0,            0 },
 	// Any display, tag 9
@@ -106,6 +124,7 @@ static const char *keepasscmd[] = { "keepass", NULL };
 static const char *keepassautotypecmd[] = { "keepass", "--auto-type", NULL };
 // static const char *suspendcmd[] = { "systemctl", "suspend", NULL };
 static const char *vifmcmd[] = { "st", "vifm", NULL };
+static const char *thunarcmd[] = { "thunar", NULL };
 static const char *screenshotcmd[] = { "scrot", "--select", "~/Pictures/Screenshots/screenshot_%Y-%m-%d_%H-%M-%S.png", NULL };
 static const char *screenshotfocusedcmd[] = { "scrot", "--focused", "~/Pictures/Screenshots/screenshot_%Y-%m-%d_%H-%M-%S.png", NULL };
 static const char *screenshotfullcmd[] = { "scrot", "--multidisp", "~/Pictures/Screenshots/screenshot_%Y-%m-%d_%H-%M-%S.png", NULL };
@@ -120,6 +139,9 @@ static const char *voldowncmd[]  = { "pactl", "set-sink-volume", "0", "-2%", NUL
 static const char *volmutecmd[]  = { "pactl", "set-sink-mute", "0", "toggle", NULL };
 // custom scripts for various things
 static const char *btheadset[] = { "/home/matt/scripts/bt.sh", "flip", NULL};
+static const char *screenchange[] = { "autorandr", "--change", NULL};
+static const char *screendocked[] = { "autorandr", "--load", "docked", "--force", NULL};
+static const char *screenmobile[] = { "autorandr", "--load", "mobile", "--force", NULL};
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -179,10 +201,11 @@ static Key keys[] = {
 	{ AltMask,                      XK_F4,     killclient,     {0} }, /* exit client */
 	{ AltMask|ControlMask,          XK_Delete, quit,           {0} }, /* quit dwm */
 	{ AltMask|ControlMask,          XK_BackSpace, self_restart, {0} }, /* restart dwm */
-	{ MODKEY,                       XK_e,      spawn,          {.v = vifmcmd } },
+	{ MODKEY,                       XK_e,      spawn,          {.v = thunarcmd } },
 	{ 0,                            XK_Print,  spawn,          {.v = screenshotcmd } },
 	{ ControlMask,                  XK_Print,  spawn,          {.v = screenshotfocusedcmd } },
 	{ ShiftMask|ControlMask,        XK_Print,  spawn,          {.v = screenshotfullcmd } },
+	{ AltMask|ControlMask,          XK_Insert,      spawn,          {.v = screenchange } }, /* autorandr reset */
 };
 
 /* button definitions */
