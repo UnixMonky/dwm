@@ -66,15 +66,18 @@ static const Rule rules[] = {
 	/* class              instance    title       tags mask     isfloating   monitor */
 	// Display 1, tag 1
 	{ "Mailspring",       NULL,       NULL,       1 << 0,       1,            0 },  // all mailspring windows float
-	{ "Mailspring",       NULL,       "Mailspring",       1 << 0,       0,            0 }, // except the main one
+	{ "Mailspring",       NULL,       "Mailspring", 1 << 0,     0,            0 },  // except the main one
 	{ "MineTime",         NULL,       NULL,       1 << 0,       0,            0 },
 	{ "teams-for-linux",  NULL,       NULL,       1 << 0,       0,            0 },
 	// Display 1, tag 2
 	{ "Skype",            NULL,       NULL,       1 << 1,       0,            0 },
+	{ "Slack",            NULL,       NULL,       1 << 1,       0,            0 },
 	{ "yakyak",           NULL,       NULL,       1 << 1,       0,            0 },
 	{ "discord",          NULL,       NULL,       1 << 1,       0,            0 },
+	{ "Pidgin",           NULL,       NULL,       1 << 1,       0,            0 },
 	// Display 1, tag 3
 	{ "Cherrytree",       NULL,       NULL,       1 << 2,       0,            0 },
+	{ "Hamster-windows-service", NULL, NULL,      1 << 2,       0,            0 },
 	// Display 1, tag 8
 	// { "Slack",            NULL,       NULL,       1 << 7,       0,            0 },
 	// Any display, tag 9
@@ -188,11 +191,11 @@ static Key keys[] = {
 	{ 0,              XF86XK_AudioLowerVolume, spawn,          {.v = voldowncmd } },
 	{ 0,              XF86XK_AudioMute,        spawn,          {.v = volmutecmd } },
 	{ 0,              XF86XK_AudioPlay,        spawn,          {.v = mediaplaycmd } },
-	{ 0,              XF86XK_AudioPause,        spawn,         {.v = mediaplaycmd } },
+	{ 0,              XF86XK_AudioPause,       spawn,          {.v = mediaplaycmd } },
 	{ 0,              XF86XK_AudioStop,        spawn,          {.v = mediastopcmd } },
 	{ 0,              XF86XK_AudioNext,        spawn,          {.v = medianextcmd } },
 	{ 0,              XF86XK_AudioPrev,        spawn,          {.v = mediaprevcmd } },
-	{ 0,              XF86XK_Tools,            spawn,          {.v = btheadset } },
+	// { 0,              XF86XK_Tools,            spawn,          {.v = btheadset } },
 	/* Custom Commands */
 	{ MODKEY,                       XK_l,      spawn,          {.v = slockcmd } },
 	{ MODKEY,                       XK_w,      spawn,          {.v = surfcmd } },
@@ -200,7 +203,7 @@ static Key keys[] = {
 	{ AltMask|ControlMask,          XK_a,      spawn,          {.v = keepassautotypecmd } },
 	{ AltMask,                      XK_F4,     killclient,     {0} }, /* exit client */
 	{ AltMask|ControlMask,          XK_Delete, quit,           {0} }, /* quit dwm */
-	{ AltMask|ControlMask,          XK_BackSpace, self_restart, {0} }, /* restart dwm */
+	{ AltMask|ControlMask,          XK_R, self_restart, {0} }, /* restart dwm */
 	{ MODKEY,                       XK_e,      spawn,          {.v = thunarcmd } },
 	{ 0,                            XK_Print,  spawn,          {.v = screenshotcmd } },
 	{ ControlMask,                  XK_Print,  spawn,          {.v = screenshotfocusedcmd } },
