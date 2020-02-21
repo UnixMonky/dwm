@@ -65,11 +65,12 @@ static const Rule rules[] = {
 	 */
 	/* class              instance    title       tags mask     isfloating   monitor */
 	// Display 1, tag 1
-	{ "Mailspring",       NULL,       NULL,       1 << 0,       1,            0 },  // all mailspring windows float
+	{ "Mailspring",       NULL,       NULL,       1 << 0,       0,            0 },
 	{ "Hamster-windows-service", NULL, NULL,      1 << 0,       0,            0 },
 	// Display 1, tag 2
 	// { "teams-for-linux",  NULL,       NULL,       1 << 1,       0,            0 },
 	{ "Microsoft Teams - Preview",  NULL,       NULL,       1 << 1,       0,            0 },
+	{ "Microsoft Teams - Preview", NULL, "Microsoft Teams Notification", 0, 1, 0 },
 	// Display 1, tag 3
 	{ "Skype",            NULL,       NULL,       1 << 2,       0,            0 },
 	{ "Slack",            NULL,       NULL,       1 << 2,       0,            0 },
