@@ -67,6 +67,7 @@ static const Rule rules[] = {
 	// Display 1, tag 1
 	{ "Mailspring",       NULL,       NULL,       1 << 0,       0,            0 },
 	{ "Hamster-windows-service", NULL, NULL,      1 << 0,       0,            0 },
+	{ "MineTime",         NULL,       NULL,       1 << 0,       0,            0 },
 	// Display 1, tag 2
 	// { "teams-for-linux",  NULL,       NULL,       1 << 1,       0,            0 },
 	{ "Microsoft Teams - Preview",  NULL,       NULL,       1 << 1,       0,            0 },
