@@ -69,7 +69,7 @@ static const Rule rules[] = {
 	{ "Hamster-windows-service", NULL, NULL,      1 << 0,       0,            0 },
 	{ "MineTime",         NULL,       NULL,       1 << 0,       0,            0 },
 	// Display 1, tag 2
-	// { "teams-for-linux",  NULL,       NULL,       1 << 1,       0,            0 },
+	{ "teams-for-linux",  NULL,       NULL,       1 << 1,       0,            0 },
 	{ "Microsoft Teams - Preview",  NULL,       NULL,       1 << 1,       0,            0 },
 	{ "Microsoft Teams - Preview", NULL, "Microsoft Teams Notification", 0, 1, 0 },
 	// Display 1, tag 3
