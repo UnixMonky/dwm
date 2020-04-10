@@ -64,20 +64,20 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class              instance    title       tags mask     isfloating   monitor */
-	// Display 1, tag 1
+	// Display 1, tag 1 - Mail/Calendar
 	{ "Mailspring",       NULL,       NULL,       1 << 0,       0,            0 },
 	{ "Hamster",          NULL,       NULL,      1 << 0,       0,            0 },
 	{ "MineTime",         NULL,       NULL,       1 << 0,       0,            0 },
-	// Display 1, tag 2
+	// Display 1, tag 2 - Messaging clients
 	{ "teams-for-linux",  NULL,       NULL,       1 << 1,       0,            0 },
 	{ "Microsoft Teams - Preview",  NULL, NULL,   1 << 1,       0,            0 },
-	{ "Microsoft Teams - Preview", NULL, "Microsoft Teams Notification", ~0, 1, 0 },
-	{ "Cherrytree",       NULL,       NULL,       1 << 1,       0,            0 },
-	// Display 1, tag 3
-	{ "Skype",            NULL,       NULL,       1 << 2,       0,            0 },
-	{ "Slack",            NULL,       NULL,       1 << 2,       0,            0 },
-	{ "discord",          NULL,       NULL,       1 << 2,       0,            0 },
-	{ "yakyak",           NULL,       NULL,       1 << 2,       0,            0 },
+	{ "Microsoft Teams - Preview", NULL, "Microsoft Teams Notification", ~0, 1, -1 },
+	{ "Skype",            NULL,       NULL,       1 << 1,       0,            0 },
+	{ "Slack",            NULL,       NULL,       1 << 1,       0,            0 },
+	{ "discord",          NULL,       NULL,       1 << 1,       0,            0 },
+	{ "yakyak",           NULL,       NULL,       1 << 1,       0,            0 },
+	// Display 1, tag 3 - Notes/Jira
+	{ "Cherrytree",       NULL,       NULL,       1 << 2,       0,            0 },
 	// Display 1, tag 8
 	// Any display, tag 9
 	{ "firefox",          NULL,       NULL,       1 << 8,       0,           -1 },
