@@ -202,12 +202,12 @@ static Key keys[] = {
 	{ AltMask|ControlMask,          XK_a,      spawn,          {.v = keepassautotypecmd } },
 	{ AltMask,                      XK_F4,     killclient,     {0} }, /* exit client */
 	{ AltMask|ControlMask,          XK_Delete, quit,           {0} }, /* quit dwm */
-	{ AltMask|ControlMask,          XK_R, self_restart, {0} }, /* restart dwm */
+	{ AltMask|ControlMask,          XK_R,      self_restart,   {0} }, /* restart dwm */
 	{ MODKEY,                       XK_e,      spawn,          {.v = thunarcmd } },
 	{ 0,                            XK_Print,  spawn,          {.v = screenshotcmd } },
 	{ ControlMask,                  XK_Print,  spawn,          {.v = screenshotfocusedcmd } },
 	{ ShiftMask|ControlMask,        XK_Print,  spawn,          {.v = screenshotfullcmd } },
-	{ AltMask|ControlMask,          XK_Insert,      spawn,          {.v = screenchange } }, /* autorandr reset */
+	{ AltMask|ControlMask,          XK_Insert, spawn,          {.v = screenchange } }, /* autorandr reset */
 };
 
 /* button definitions */
