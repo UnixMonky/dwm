@@ -105,6 +105,7 @@ static const char *keepassautotypecmd[] = { "keepass", "--auto-type", NULL };
 // static const char *suspendcmd[] = { "systemctl", "suspend", NULL };
 static const char *vifmcmd[] = { "st", "vifm", NULL };
 static const char *thunarcmd[] = { "thunar", NULL };
+static const char *nemocmd[] = { "nemo", NULL };
 static const char *screenshotcmd[] = { "scrot", "--select", "~/Pictures/Screenshots/screenshot_%Y-%m-%d_%H-%M-%S.png", NULL };
 static const char *screenshotfocusedcmd[] = { "scrot", "--focused", "~/Pictures/Screenshots/screenshot_%Y-%m-%d_%H-%M-%S.png", NULL };
 static const char *screenshotfullcmd[] = { "scrot", "--multidisp", "~/Pictures/Screenshots/screenshot_%Y-%m-%d_%H-%M-%S.png", NULL };
@@ -114,9 +115,9 @@ static const char *mediastopcmd[] = { "playerctl", "stop", NULL };
 static const char *medianextcmd[] = { "playerctl", "next", NULL };
 static const char *mediaprevcmd[] = { "playerctl", "previous", NULL };
 // volume media keys
-static const char *volupcmd[]  = { "pactl", "set-sink-volume", "$(pacmd list-sinks |awk '/* index:/{print $3}')", "+2%", NULL };
-static const char *voldowncmd[]  = { "pactl", "set-sink-volume", "$(pacmd list-sinks |awk '/* index:/{print $3}')", "-2%", NULL };
-static const char *volmutecmd[]  = { "pactl", "set-sink-mute", "$(pacmd list-sinks |awk '/* index:/{print $3}')", "toggle", NULL };
+static const char *volupcmd[]  = { "/home/matt/scripts/pavol.sh", "+", NULL };
+static const char *voldowncmd[]  = { "/home/matt/scripts/pavol.sh", "-", NULL };
+static const char *volmutecmd[]  = { "/home/matt/scripts/pavol.sh", "mute", NULL };
 // custom scripts for various things
 static const char *btheadset[] = { "/home/matt/scripts/bt.sh", "flip", NULL};
 
@@ -171,14 +172,14 @@ static Key keys[] = {
 	{ 0,              XF86XK_AudioPrev,        spawn,          {.v = mediaprevcmd } },
 	{ 0,              XF86XK_Tools,            spawn,          {.v = btheadset } },
 	/* Custom Commands */
-	{ MODKEY,                       XK_l,      spawn,          {.v = xscreensavercmd } },
+	{ MODKEY,                       XK_l,      spawn,          {.v = slockcmd } },
 	{ MODKEY,                       XK_w,      spawn,          {.v = surfcmd } },
 	{ AltMask|ControlMask,          XK_k,      spawn,          {.v = keepasscmd } },
 	{ AltMask|ControlMask,          XK_a,      spawn,          {.v = keepassautotypecmd } },
 	{ AltMask,                      XK_F4,     killclient,     {0} }, /* exit client */
 	{ AltMask|ControlMask,          XK_Delete, quit,           {0} }, /* quit dwm */
 	{ AltMask|ControlMask,          XK_BackSpace, self_restart, {0} }, /* restart dwm */
-	{ MODKEY,                       XK_e,      spawn,          {.v = thunarcmd } },
+	{ MODKEY,                       XK_e,      spawn,          {.v = nemocmd },
 	{ 0,                            XK_Print,  spawn,          {.v = screenshotcmd } },
 	{ ControlMask,                  XK_Print,  spawn,          {.v = screenshotfocusedcmd } },
 	{ ShiftMask|ControlMask,        XK_Print,  spawn,          {.v = screenshotfullcmd } },
