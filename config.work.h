@@ -64,19 +64,21 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class              instance    title       tags mask     isfloating   monitor */
-	// Display 1, tag 1
-	{ "Mailspring",       NULL,       NULL,       1 << 0,       1,            0 },  // all mailspring windows float
-	{ "Mailspring",       NULL,       "Mailspring",       1 << 0,       0,            0 }, // except the main one
+	// Display 1, tag 1 - Mail/Calendar
+	{ "Mailspring",       NULL,       NULL,       1 << 0,       0,            0 },
+	{ "Hamster",          NULL,       NULL,      1 << 0,       0,            0 },
 	{ "MineTime",         NULL,       NULL,       1 << 0,       0,            0 },
-	{ "teams-for-linux",  NULL,       NULL,       1 << 0,       0,            0 },
-	// Display 1, tag 2
+	// Display 1, tag 2 - Messaging clients
+	{ "teams-for-linux",  NULL,       NULL,       1 << 1,       0,            0 },
+	{ "Microsoft Teams - Preview",  NULL, NULL,   1 << 1,       0,            0 },
+	{ "Microsoft Teams - Preview", NULL, "Microsoft Teams Notification", ~0, 1, -1 },
 	{ "Skype",            NULL,       NULL,       1 << 1,       0,            0 },
-	{ "yakyak",           NULL,       NULL,       1 << 1,       0,            0 },
+	{ "Slack",            NULL,       NULL,       1 << 1,       0,            0 },
 	{ "discord",          NULL,       NULL,       1 << 1,       0,            0 },
-	// Display 1, tag 3
+	{ "yakyak",           NULL,       NULL,       1 << 1,       0,            0 },
+	// Display 1, tag 3 - Notes/Jira
 	{ "Cherrytree",       NULL,       NULL,       1 << 2,       0,            0 },
 	// Display 1, tag 8
-	// { "Slack",            NULL,       NULL,       1 << 7,       0,            0 },
 	// Any display, tag 9
 	{ "firefox",          NULL,       NULL,       1 << 8,       0,           -1 },
 	// Any display, force floating
@@ -148,8 +150,8 @@ static Key keys[] = {
 	{ ControlMask,                  XK_space,  spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_t,      spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
-	{ MODKEY,                       XK_bracketleft,  rotatestack, {.i = +1 } },
-	{ MODKEY,                       XK_bracketright, rotatestack, {.i = -1 } },
+	{ MODKEY,                       XK_bracketleft,  rotatestack, {.i = -1 } },
+	{ MODKEY,                       XK_bracketright, rotatestack, {.i = +1 } },
 	{ Mod1Mask,                     XK_Tab,    focusstack,     {.i = +1 } },
 	{ Mod1Mask|ShiftMask,           XK_Tab,    focusstack,     {.i = -1 } },
 	{ MODKEY,                       XK_equal,  incnmaster,     {.i = +1 } },
@@ -188,11 +190,11 @@ static Key keys[] = {
 	{ 0,              XF86XK_AudioLowerVolume, spawn,          {.v = voldowncmd } },
 	{ 0,              XF86XK_AudioMute,        spawn,          {.v = volmutecmd } },
 	{ 0,              XF86XK_AudioPlay,        spawn,          {.v = mediaplaycmd } },
-	{ 0,              XF86XK_AudioPause,        spawn,         {.v = mediaplaycmd } },
+	{ 0,              XF86XK_AudioPause,       spawn,          {.v = mediaplaycmd } },
 	{ 0,              XF86XK_AudioStop,        spawn,          {.v = mediastopcmd } },
 	{ 0,              XF86XK_AudioNext,        spawn,          {.v = medianextcmd } },
 	{ 0,              XF86XK_AudioPrev,        spawn,          {.v = mediaprevcmd } },
-	{ 0,              XF86XK_Tools,            spawn,          {.v = btheadset } },
+	// { 0,              XF86XK_Tools,            spawn,          {.v = btheadset } },
 	/* Custom Commands */
 	{ MODKEY,                       XK_l,      spawn,          {.v = slockcmd } },
 	{ MODKEY,                       XK_w,      spawn,          {.v = surfcmd } },
@@ -200,12 +202,12 @@ static Key keys[] = {
 	{ AltMask|ControlMask,          XK_a,      spawn,          {.v = keepassautotypecmd } },
 	{ AltMask,                      XK_F4,     killclient,     {0} }, /* exit client */
 	{ AltMask|ControlMask,          XK_Delete, quit,           {0} }, /* quit dwm */
-	{ AltMask|ControlMask,          XK_BackSpace, self_restart, {0} }, /* restart dwm */
+	{ AltMask|ControlMask,          XK_R,      self_restart,   {0} }, /* restart dwm */
 	{ MODKEY,                       XK_e,      spawn,          {.v = thunarcmd } },
 	{ 0,                            XK_Print,  spawn,          {.v = screenshotcmd } },
 	{ ControlMask,                  XK_Print,  spawn,          {.v = screenshotfocusedcmd } },
 	{ ShiftMask|ControlMask,        XK_Print,  spawn,          {.v = screenshotfullcmd } },
-	{ AltMask|ControlMask,          XK_Insert,      spawn,          {.v = screenchange } }, /* autorandr reset */
+	{ AltMask|ControlMask,          XK_Insert, spawn,          {.v = screenchange } }, /* autorandr reset */
 };
 
 /* button definitions */
