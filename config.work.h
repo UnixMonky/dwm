@@ -34,6 +34,20 @@ static const char sol_blue[]        = "#002B36";
 static const char sol_grey[]        = "#657b83";
 static const char sol_ltgrey[]      = "#93a1a1";
 
+// Dracula color theme
+static const char drac_bg[]         = "#282a36";
+static const char drac_fg[]         = "#f8f8f2";
+static const char crac_currline[]   = "#44475a";
+static const char drac_select[]     = "#44475a";
+static const char drac_comment[]    = "#6272a4";
+static const char drac_cyan[]       = "#8be9fd";
+static const char drac_green[]      = "#50fa7b";
+static const char drac_orange[]     = "#ffb86c";
+static const char drac_pink[]       = "#ff79c6";
+static const char drac_purple[]     = "#bd93f9";
+static const char drac_red[]        = "#ff5555";
+static const char drac_yellow[]     = "#f1fa8c";
+
 // custom
 static const char cst_purple[]      = "#360168";
 static const char cst_pink[]        = "#690167";
@@ -48,11 +62,18 @@ static const char *colors[][3]      = {
 	// [SchemeNorm] =	 { sol_grey, sol_blue,    sol_blue   },
 	// [SchemeSel]  =	 { sol_blue, sol_ltgrey,  sol_ltgrey },
 	// Custom
-	[SchemeNorm] =	 { col_gray3,  col_gray1, col_black },
-	[SchemeSel]  =	 { col_yellow, col_mySel,   col_cyan   },
-	// other
-	[SchemeWarn] =	 { col_black, col_yellow, col_red    },
-	[SchemeUrgent]=	 { col_white, col_red,    col_red    },
+	// [SchemeNorm] =	 { col_gray3,  col_gray1, col_black },
+	// [SchemeSel]  =	 { col_yellow, col_mySel,   col_cyan   },
+	// // other
+	// [SchemeWarn] =	 { col_black, col_yellow, col_red    },
+	// [SchemeUrgent]=	 { col_white, col_red,    col_red    },
+
+  // Dracula theming
+	[SchemeNorm] =	 { drac_fg, drac_bg, drac_bg },
+	[SchemeSel]  =	 { drac_orange, drac_select,  drac_select },
+	[SchemeWarn] =	 { drac_bg, drac_yellow, drac_yellow },
+	[SchemeUrgent]=	 { drac_bg, drac_red, drac_red },
+
 };
 
 /* tagging */
