@@ -69,10 +69,10 @@ static const Rule rules[] = {
 	 */
 	/* class              instance    title       tags mask     isfloating   monitor */
 	// Display 1, tag 1
-	{ "Cherrytree",       NULL,       NULL,       1 << 0,       0,            0 },
+	{ "Slack",            NULL,       NULL,       1 << 0,       0,            0 },
 	{ "discord",          NULL,       NULL,       1 << 0,       0,            0 },
 	// Display 1, tag 2
-	// { "Skype",            NULL,       NULL,       1 << 1,       0,            0 },
+	{ "Cherrytree",       NULL,       NULL,       1 << 1,       0,            0 },
 	// Display 1, tag 3
 	// { "CherryTree",       NULL,       NULL,       1 << 4,       1,           1 },
 	// Display 1, tag 8
@@ -191,6 +191,7 @@ static Key keys[] = {
 	{ 0,              XF86XK_AudioStop,        spawn,          {.v = mediastopcmd } },
 	{ 0,              XF86XK_AudioNext,        spawn,          {.v = medianextcmd } },
 	{ 0,              XF86XK_AudioPrev,        spawn,          {.v = mediaprevcmd } },
+	{ 0,              XF86XK_Tools,            spawn,          {.v = btheadset } },
 	{ 0,              XF86XK_Tools,            spawn,          {.v = btheadset } },
 	/* Custom Commands */
 	{ MODKEY,                       XK_l,      spawn,          {.v = slockcmd } },
