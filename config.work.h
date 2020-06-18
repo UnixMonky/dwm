@@ -146,8 +146,8 @@ static const char *surfcmd[]  = { "tabbed", "surf", "-pe", NULL };
 static const char *keepasscmd[] = { "keepass", NULL };
 static const char *keepassautotypecmd[] = { "keepass", "--auto-type", NULL };
 // static const char *suspendcmd[] = { "systemctl", "suspend", NULL };
-static const char *vifmcmd[] = { "st", "vifm", NULL };
-static const char *thunarcmd[] = { "thunar", NULL };
+// static const char *vifmcmd[] = { "st", "vifm", NULL };
+// static const char *thunarcmd[] = { "thunar", NULL };
 static const char *nemocmd[] = { "nemo", NULL };
 static const char *screenshotcmd[] = { "scrot", "--select", "~/Pictures/Screenshots/screenshot_%Y-%m-%d_%H-%M-%S.png", NULL };
 static const char *screenshotfocusedcmd[] = { "scrot", "--focused", "~/Pictures/Screenshots/screenshot_%Y-%m-%d_%H-%M-%S.png", NULL };
@@ -162,10 +162,10 @@ static const char *volupcmd[]  = { "pactl", "set-sink-volume", "0", "+2%", NULL 
 static const char *voldowncmd[]  = { "pactl", "set-sink-volume", "0", "-2%", NULL };
 static const char *volmutecmd[]  = { "pactl", "set-sink-mute", "0", "toggle", NULL };
 // custom scripts for various things
-static const char *btheadset[] = { "/home/matt/scripts/bt.sh", "flip", NULL};
+// static const char *btheadset[] = { "/home/matt/scripts/bt.sh", "flip", NULL};
 static const char *screenchange[] = { "autorandr", "--change", NULL};
-static const char *screendocked[] = { "autorandr", "--load", "docked", "--force", NULL};
-static const char *screenmobile[] = { "autorandr", "--load", "mobile", "--force", NULL};
+// static const char *screendocked[] = { "autorandr", "--load", "docked", "--force", NULL};
+// static const char *screenmobile[] = { "autorandr", "--load", "mobile", "--force", NULL};
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
