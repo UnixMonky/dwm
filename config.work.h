@@ -97,8 +97,11 @@ static const Rule rules[] = {
 	{ "Slack",            NULL,       NULL,       1 << 1,       0,            0 },
 	{ "discord",          NULL,       NULL,       1 << 1,       0,            0 },
 	{ "yakyak",           NULL,       NULL,       1 << 1,       0,            0 },
+	{ "Surf ",            NULL,       "- Chat",   1 << 1,       0,            0 },
 	// Display 1, tag 3 - Notes/Jira
 	{ "Cherrytree",       NULL,       NULL,       1 << 2,       0,            0 },
+	{ "Surf ",            NULL,       "- Global Service Diagnostics (GSD)",   1 << 2,       0,            0 },
+	{ "Surf ",            NULL,       "- JIRA",   1 << 2,       0,            0 },
 	// Display 1, tag 8
 	// Any display, tag 9
 	{ "firefox",          NULL,       NULL,       1 << 8,       0,           -1 },
