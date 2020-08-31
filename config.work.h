@@ -96,7 +96,7 @@ static const Rule rules[] = {
 	{ "Skype",            NULL,       NULL,       1 << 1,       0,            0 },
 	{ "Slack",            NULL,       NULL,       1 << 1,       0,            0 },
 	{ "discord",          NULL,       NULL,       1 << 1,       0,            0 },
-	{ "yakyak",           NULL,       NULL,       1 << 1,       0,            0 },
+	{ "Franz",            NULL,       NULL,       1 << 1,       0,            0 },
 	{ "Surf ",            NULL,       "- Chat",   1 << 1,       0,            0 },
 	// Display 1, tag 3 - Notes/Jira
 	{ "Cherrytree",       NULL,       NULL,       1 << 2,       0,            0 },
