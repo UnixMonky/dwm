@@ -81,6 +81,7 @@ static const Rule rules[] = {
 	{ "firefox",          NULL,       NULL,       1 << 8,       0,           -1 },
 	// Any display, force floating
 	{ "KeePass2",         NULL,       NULL,       0,            1,           -1 },
+	{ "KeePassXC",        NULL,       NULL,       0,            1,           -1 },
 	{ "Chatty",           NULL,       NULL,       0,            1,           -1 },
 	{ "Gimp",             NULL,       NULL,       0,            1,           -1 },
 };
@@ -123,6 +124,7 @@ static const char *xscreensavercmd[]  = { "xscreensaver-command", "-lock", NULL 
 static const char *surfcmd[]  = { "tabbed", "surf", "-pe", NULL };
 static const char *keepasscmd[] = { "keepass", NULL };
 static const char *keepassautotypecmd[] = { "keepass", "--auto-type", NULL };
+static const char *keepassxccmd[] = { "keepassxc", NULL };
 // static const char *suspendcmd[] = { "systemctl", "suspend", NULL };
 static const char *vifmcmd[] = { "st", "vifm", NULL };
 static const char *thunarcmd[] = { "thunar", NULL };
@@ -196,8 +198,8 @@ static Key keys[] = {
 	/* Custom Commands */
 	{ MODKEY,                       XK_l,      spawn,          {.v = slockcmd } },
 	{ MODKEY,                       XK_w,      spawn,          {.v = surfcmd } },
-	{ AltMask|ControlMask,          XK_k,      spawn,          {.v = keepasscmd } },
-	{ AltMask|ControlMask,          XK_a,      spawn,          {.v = keepassautotypecmd } },
+	{ AltMask|ControlMask,          XK_k,      spawn,          {.v = keepassxccmd } },
+	// { AltMask|ControlMask,          XK_a,      spawn,          {.v = keepassautotypecmd } },
 	{ AltMask,                      XK_F4,     killclient,     {0} }, /* exit client */
 	{ AltMask|ControlMask,          XK_Delete, quit,           {0} }, /* quit dwm */
 	{ AltMask|ControlMask,          XK_BackSpace, self_restart, {0} }, /* restart dwm */
