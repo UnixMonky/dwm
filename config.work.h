@@ -86,29 +86,30 @@ static const Rule rules[] = {
 	 */
 	/* class              instance    title       tags mask     isfloating   monitor */
 	// Display 1, tag 1 - Mail/Calendar
-	{ "Mailspring",       NULL,       NULL,       1 << 0,       0,            0 },
-	{ "Hamster",          NULL,       NULL,      1 << 0,       0,            0 },
-	{ "MineTime",         NULL,       NULL,       1 << 0,       0,            0 },
+	// { "Mailspring",       NULL,       NULL,       1 << 0,       0,            0 },
+	{ "Chromium",         "crx_pkooggnaalmfkidjmlhoelhdllpphaga",       NULL,      1 << 0,       0,            0 },
+	// { "MineTime",         NULL,       NULL,       1 << 0,       0,            0 },
 	// Display 1, tag 2 - Messaging clients
+	{ "Hamster",          NULL,       NULL,       1 << 1,       0,            0 },
 	{ "teams-for-linux",  NULL,       NULL,       1 << 1,       0,            0 },
-	{ "Microsoft Teams - Preview",  NULL, NULL,   1 << 1,       0,            0 },
+	{ "Microsoft Teams - Preview", NULL, NULL,    1 << 1,       0,            0 },
 	{ "Microsoft Teams - Preview", NULL, "Microsoft Teams Notification", ~0, 1, -1 },
-	{ "Skype",            NULL,       NULL,       1 << 1,       0,            0 },
+	// { "Skype",            NULL,       NULL,       1 << 1,       0,            0 },
 	{ "Slack",            NULL,       NULL,       1 << 1,       0,            0 },
 	{ "discord",          NULL,       NULL,       1 << 1,       0,            0 },
 	{ "Franz",            NULL,       NULL,       1 << 1,       0,            0 },
-	{ "Surf ",            NULL,       "- Chat",   1 << 1,       0,            0 },
-	// Display 1, tag 3 - Notes/Jira
+	// { "Surf ",            NULL,       "- Chat",   1 << 1,       0,            0 },
+	// { "Ao ",              NULL,       NULL,       1 << 1,       0,            0 },
+	// Display 1, tag 3 - Notes
 	{ "Cherrytree",       NULL,       NULL,       1 << 2,       0,            0 },
-	{ "Surf ",            NULL,       "- Global Service Diagnostics (GSD)",   1 << 2,       0,            0 },
-	{ "Surf ",            NULL,       "- JIRA",   1 << 2,       0,            0 },
-	// Display 1, tag 8
+	// Display 1, tag 4 - Jiras
+	// { "tabbed",           NULL,       NULL,       1 << 3,       0,            0 },
 	// Any display, tag 9
 	{ "firefox",          NULL,       NULL,       1 << 8,       0,           -1 },
 	// Any display, force floating
 	{ "KeePass2",         NULL,       NULL,       0,            1,           -1 },
+	{ "keepassXC",        NULL,       NULL,       0,            1,           -1 },
 	{ "Chatty",           NULL,       NULL,       0,            1,           -1 },
-	{ "Gimp",             NULL,       NULL,       0,            1,           -1 },
 };
 
 /* layout(s) */
@@ -132,10 +133,10 @@ static const Layout layouts[] = {
 #define MODKEY Mod4Mask  // Windows key for meta
 #define AltMask Mod1Mask  // Alt key
 #define TAGKEYS(KEY,TAG) \
-	{ MODKEY,              KEY,      view,           {.ui = 1 << TAG} }, \
-	{ ControlMask,         KEY,      toggleview,     {.ui = 1 << TAG} }, \
-	{ MODKEY|AltMask,      KEY,      tag,            {.ui = 1 << TAG} }, \
-	{ ControlMask|AltMask, KEY,      toggletag,      {.ui = 1 << TAG} },
+	{ MODKEY,                KEY,      view,           {.ui = 1 << TAG} }, \
+	{ ControlMask|ShiftMask, KEY,      toggleview,     {.ui = 1 << TAG} }, \
+	{ MODKEY|AltMask,        KEY,      tag,            {.ui = 1 << TAG} }, \
+	{ ControlMask|AltMask,   KEY,      toggletag,      {.ui = 1 << TAG} },
 
 /* helper for spawning shell commands in the pre dwm-5.0 fashion */
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
@@ -147,11 +148,13 @@ static const char *termcmd[]  = { "st", NULL };
 static const char *slockcmd[]  = { "slock", NULL };
 static const char *surfcmd[]  = { "tabbed", "surf", "-pe", NULL };
 static const char *keepasscmd[] = { "keepass", NULL };
-static const char *keepassautotypecmd[] = { "keepass", "--auto-type", NULL };
+static const char *keepassxccmd[] = { "keepassxc", NULL };
+// static const char *keepassautotypecmd[] = { "keepass", "--auto-type", NULL };
 // static const char *suspendcmd[] = { "systemctl", "suspend", NULL };
 // static const char *vifmcmd[] = { "st", "vifm", NULL };
 // static const char *thunarcmd[] = { "thunar", NULL };
 static const char *nemocmd[] = { "nemo", NULL };
+// static const char *nnncmd[] = { "nnn", NULL };
 static const char *screenshotcmd[] = { "scrot", "--select", "~/Pictures/Screenshots/screenshot_%Y-%m-%d_%H-%M-%S.png", NULL };
 static const char *screenshotfocusedcmd[] = { "scrot", "--focused", "~/Pictures/Screenshots/screenshot_%Y-%m-%d_%H-%M-%S.png", NULL };
 static const char *screenshotfullcmd[] = { "scrot", "--multidisp", "~/Pictures/Screenshots/screenshot_%Y-%m-%d_%H-%M-%S.png", NULL };
@@ -161,8 +164,8 @@ static const char *mediastopcmd[] = { "playerctl", "stop", NULL };
 static const char *medianextcmd[] = { "playerctl", "next", NULL };
 static const char *mediaprevcmd[] = { "playerctl", "previous", NULL };
 // volume media keys
-static const char *volupcmd[]  = { "pactl", "set-sink-volume", "0", "+2%", NULL };
-static const char *voldowncmd[]  = { "pactl", "set-sink-volume", "0", "-2%", NULL };
+static const char *volupcmd[]  = { "pactl", "set-sink-volume", "0", "+5%", NULL };
+static const char *voldowncmd[]  = { "pactl", "set-sink-volume", "0", "-5%", NULL };
 static const char *volmutecmd[]  = { "pactl", "set-sink-mute", "0", "toggle", NULL };
 // custom scripts for various things
 // static const char *btheadset[] = { "/home/matt/scripts/bt.sh", "flip", NULL};
@@ -223,8 +226,8 @@ static Key keys[] = {
 	/* Custom Commands */
 	{ MODKEY,                       XK_l,      spawn,          {.v = slockcmd } },
 	{ MODKEY,                       XK_w,      spawn,          {.v = surfcmd } },
-	{ AltMask|ControlMask,          XK_k,      spawn,          {.v = keepasscmd } },
-	{ AltMask|ControlMask,          XK_a,      spawn,          {.v = keepassautotypecmd } },
+	{ AltMask|ControlMask,          XK_k,      spawn,          {.v = keepassxccmd } },
+	// { AltMask|ControlMask,          XK_a,      spawn,          {.v = keepassautotypecmd } },
 	{ AltMask,                      XK_F4,     killclient,     {0} }, /* exit client */
 	{ AltMask|ControlMask,          XK_Delete, quit,           {0} }, /* quit dwm */
 	{ AltMask|ControlMask,          XK_R,      self_restart,   {0} }, /* restart dwm */
