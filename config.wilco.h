@@ -15,8 +15,9 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 // static const char *fonts[]          = { "monospace:size=10" };
 static const char *fonts[]          = {
-	"L Sans Mono:pixelsize=14",
-	"Material Design Icons:pixelsize=14",
+	// "L Sans Mono:pixelsize=14",
+	// "Material Design Icons:pixelsize=14",
+	"MesloLGSDZ Nerd Font:pixelsize=14",
 };
 static const char dmenufont[]       = "monospace:size=10";
 static const char col_gray1[]       = "#222222";
@@ -129,7 +130,7 @@ static const char *keepassxccmd[] = { "keepassxc", NULL };
 static const char *vifmcmd[] = { "st", "vifm", NULL };
 static const char *thunarcmd[] = { "thunar", NULL };
 static const char *nemocmd[] = { "nemo", NULL };
-static const char *screenshotcmd[] = { "scrot", "--select", "~/Pictures/Screenshots/screenshot_%Y-%m-%d_%H-%M-%S.png", NULL };
+static const char *screenshotcmd[] = { "scrot", "-s", "~/Pictures/Screenshots/screenshot_%Y-%m-%d_%H-%M-%S.png", NULL };
 static const char *screenshotfocusedcmd[] = { "scrot", "--focused", "~/Pictures/Screenshots/screenshot_%Y-%m-%d_%H-%M-%S.png", NULL };
 static const char *screenshotfullcmd[] = { "scrot", "--multidisp", "~/Pictures/Screenshots/screenshot_%Y-%m-%d_%H-%M-%S.png", NULL };
 // Media player controls by playerctl command (https://github.com/acrisci/playerctl)
@@ -195,6 +196,8 @@ static Key keys[] = {
 	{ 0,              XF86XK_AudioPrev,        spawn,          {.v = mediaprevcmd } },
 	{ 0,              XF86XK_Tools,            spawn,          {.v = btheadset } },
 	{ 0,              XF86XK_Tools,            spawn,          {.v = btheadset } },
+	/* screenshots */
+	{ 0,              XK_Print,                spawn,          SHCMD("scrot -s ~/Sync/Screenshots/%Y-%m-%d-%s%w%h.jpg") },
 	/* Custom Commands */
 	{ MODKEY,                       XK_l,      spawn,          {.v = slockcmd } },
 	{ MODKEY,                       XK_w,      spawn,          {.v = surfcmd } },
