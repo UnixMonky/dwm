@@ -15,7 +15,7 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 // static const char *fonts[]          = { "monospace:size=10" };
 static const char *fonts[]          = {
-	"Fira Mono:pixelsize=14",
+	"L Sans Mono:pixelsize=14",
 	"Material Design Icons:pixelsize=14",
 };
 static const char dmenufont[]       = "monospace:size=10";
@@ -108,7 +108,7 @@ static const Rule rules[] = {
 	{ "firefox",          NULL,       NULL,       1 << 8,       0,           -1 },
 	// Any display, force floating
 	{ "KeePass2",         NULL,       NULL,       0,            1,           -1 },
-	{ "keepassXC",        NULL,       NULL,       0,            1,           -1 },
+	{ "KeePassXC",        NULL,       NULL,       0,            1,           -1 },
 	{ "Chatty",           NULL,       NULL,       0,            1,           -1 },
 };
 
