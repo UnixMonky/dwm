@@ -15,8 +15,7 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 // static const char *fonts[]          = { "monospace:size=10" };
 static const char *fonts[]          = {
-	"L Sans Mono:pixelsize=14",
-	"Material Design Icons:pixelsize=14",
+	"MesloLGSDZ Nerd Font:pixelsize=14",
 };
 static const char dmenufont[]       = "monospace:size=10";
 static const char col_gray1[]       = "#222222";
@@ -153,8 +152,8 @@ static const char *keepassxccmd[] = { "keepassxc", NULL };
 // static const char *suspendcmd[] = { "systemctl", "suspend", NULL };
 // static const char *vifmcmd[] = { "st", "vifm", NULL };
 // static const char *thunarcmd[] = { "thunar", NULL };
-static const char *nemocmd[] = { "nemo", NULL };
-// static const char *nnncmd[] = { "nnn", NULL };
+// static const char *nemocmd[] = { "nemo", NULL };
+static const char *nnncmd[] = { "st", "-f", "'MesloLGSDZ Nerd Font:pixelsize=24'", "-e", "nnn", NULL };
 static const char *screenshotcmd[] = { "scrot", "--select", "~/Pictures/Screenshots/screenshot_%Y-%m-%d_%H-%M-%S.png", NULL };
 static const char *screenshotfocusedcmd[] = { "scrot", "--focused", "~/Pictures/Screenshots/screenshot_%Y-%m-%d_%H-%M-%S.png", NULL };
 static const char *screenshotfullcmd[] = { "scrot", "--multidisp", "~/Pictures/Screenshots/screenshot_%Y-%m-%d_%H-%M-%S.png", NULL };
@@ -231,7 +230,7 @@ static Key keys[] = {
 	{ AltMask,                      XK_F4,     killclient,     {0} }, /* exit client */
 	{ AltMask|ControlMask,          XK_Delete, quit,           {0} }, /* quit dwm */
 	{ AltMask|ControlMask,          XK_R,      self_restart,   {0} }, /* restart dwm */
-	{ MODKEY,                       XK_e,      spawn,          {.v = nemocmd } },
+	{ MODKEY,                       XK_e,      spawn,          {.v = nnncmd } },
 	{ 0,                            XK_Print,  spawn,          {.v = screenshotcmd } },
 	{ ControlMask,                  XK_Print,  spawn,          {.v = screenshotfocusedcmd } },
 	{ ShiftMask|ControlMask,        XK_Print,  spawn,          {.v = screenshotfullcmd } },
