@@ -146,14 +146,14 @@ static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont,
 static const char *termcmd[]  = { "st", NULL };
 static const char *slockcmd[]  = { "slock", NULL };
 static const char *surfcmd[]  = { "tabbed", "surf", "-pe", NULL };
-static const char *keepasscmd[] = { "keepass", NULL };
+// static const char *keepasscmd[] = { "keepass", NULL };
 static const char *keepassxccmd[] = { "keepassxc", NULL };
 // static const char *keepassautotypecmd[] = { "keepass", "--auto-type", NULL };
 // static const char *suspendcmd[] = { "systemctl", "suspend", NULL };
 // static const char *vifmcmd[] = { "st", "vifm", NULL };
 // static const char *thunarcmd[] = { "thunar", NULL };
 // static const char *nemocmd[] = { "nemo", NULL };
-static const char *nnncmd[] = { "st", "-f", "'MesloLGSDZ Nerd Font:pixelsize=24'", "-e", "nnn", NULL };
+static const char *nnncmd[] = { "st", "-f", "'MesloLGSDZ Nerd Font:pixelsize=189'", "-e", "nnn", NULL };
 static const char *screenshotcmd[] = { "scrot", "--select", "~/Pictures/Screenshots/screenshot_%Y-%m-%d_%H-%M-%S.png", NULL };
 static const char *screenshotfocusedcmd[] = { "scrot", "--focused", "~/Pictures/Screenshots/screenshot_%Y-%m-%d_%H-%M-%S.png", NULL };
 static const char *screenshotfullcmd[] = { "scrot", "--multidisp", "~/Pictures/Screenshots/screenshot_%Y-%m-%d_%H-%M-%S.png", NULL };
@@ -166,6 +166,9 @@ static const char *mediaprevcmd[] = { "playerctl", "previous", NULL };
 static const char *volupcmd[]  = { "pactl", "set-sink-volume", "0", "+5%", NULL };
 static const char *voldowncmd[]  = { "pactl", "set-sink-volume", "0", "-5%", NULL };
 static const char *volmutecmd[]  = { "pactl", "set-sink-mute", "0", "toggle", NULL };
+// backlight brightness keys
+static const char *brightnessupcmd[]  = { "xbacklight", "+5", NULL };
+static const char *brightnessdowncmd[]  = { "xbacklight", "-5", NULL };
 // custom scripts for various things
 // static const char *btheadset[] = { "/home/matt/scripts/bt.sh", "flip", NULL};
 static const char *screenchange[] = { "autorandr", "--change", NULL};
@@ -213,14 +216,16 @@ static Key keys[] = {
 	TAGKEYS(                        XK_8,                      7)
  	TAGKEYS(                        XK_9,                      8)
 	/* Media and special Keyboard Keys */
-	{ 0,              XF86XK_AudioRaiseVolume, spawn,          {.v = volupcmd } },
-	{ 0,              XF86XK_AudioLowerVolume, spawn,          {.v = voldowncmd } },
-	{ 0,              XF86XK_AudioMute,        spawn,          {.v = volmutecmd } },
-	{ 0,              XF86XK_AudioPlay,        spawn,          {.v = mediaplaycmd } },
-	{ 0,              XF86XK_AudioPause,       spawn,          {.v = mediaplaycmd } },
-	{ 0,              XF86XK_AudioStop,        spawn,          {.v = mediastopcmd } },
-	{ 0,              XF86XK_AudioNext,        spawn,          {.v = medianextcmd } },
-	{ 0,              XF86XK_AudioPrev,        spawn,          {.v = mediaprevcmd } },
+	{ 0,              XF86XK_AudioRaiseVolume,    spawn,          {.v = volupcmd } },
+	{ 0,              XF86XK_AudioLowerVolume,    spawn,          {.v = voldowncmd } },
+	{ 0,              XF86XK_AudioMute,           spawn,          {.v = volmutecmd } },
+	{ 0,              XF86XK_AudioPlay,           spawn,          {.v = mediaplaycmd } },
+	{ 0,              XF86XK_AudioPause,          spawn,          {.v = mediaplaycmd } },
+	{ 0,              XF86XK_AudioStop,           spawn,          {.v = mediastopcmd } },
+	{ 0,              XF86XK_AudioNext,           spawn,          {.v = medianextcmd } },
+	{ 0,              XF86XK_AudioPrev,           spawn,          {.v = mediaprevcmd } },
+	{ 0,              XF86XK_MonBrightnessUp,     spawn,          {.v = brightnessupcmd } },
+	{ 0,              XF86XK_MonBrightnessDown,   spawn,          {.v = brightnessdowncmd } },
 	// { 0,              XF86XK_Tools,            spawn,          {.v = btheadset } },
 	/* Custom Commands */
 	{ MODKEY,                       XK_l,      spawn,          {.v = slockcmd } },
