@@ -153,8 +153,9 @@ static const char *keepassxccmd[] = { "keepassxc", NULL };
 // static const char *suspendcmd[] = { "systemctl", "suspend", NULL };
 // static const char *vifmcmd[] = { "st", "vifm", NULL };
 // static const char *thunarcmd[] = { "thunar", NULL };
-// static const char *nemocmd[] = { "nemo", NULL };
-static const char *nnncmd[] = { "st", "-f", "'MesloLGSDZ Nerd Font:pixelsize=189'", "-e", "nnn", NULL };
+// static const char *nemocmd[] = { "GTK_THEME=Dracula", "nemo", NULL };
+static const char *nemocmd[] = { "nemo", NULL };
+// static const char *nnncmd[] = { "st", "-f", "'MesloLGSDZ Nerd Font:pixelsize=18'", "-e", "nnn", NULL };
 static const char *screenshotcmd[] = { "scrot", "--select", "~/Pictures/Screenshots/screenshot_%Y-%m-%d_%H-%M-%S.png", NULL };
 static const char *screenshotfocusedcmd[] = { "scrot", "--focused", "~/Pictures/Screenshots/screenshot_%Y-%m-%d_%H-%M-%S.png", NULL };
 static const char *screenshotfullcmd[] = { "scrot", "--multidisp", "~/Pictures/Screenshots/screenshot_%Y-%m-%d_%H-%M-%S.png", NULL };
@@ -236,7 +237,7 @@ static Key keys[] = {
 	{ AltMask,                      XK_F4,     killclient,     {0} }, /* exit client */
 	{ AltMask|ControlMask,          XK_Delete, quit,           {0} }, /* quit dwm */
 	{ AltMask|ControlMask,          XK_R,      self_restart,   {0} }, /* restart dwm */
-	{ MODKEY,                       XK_e,      spawn,          {.v = nnncmd } },
+	{ MODKEY,                       XK_e,      spawn,          {.v = nemocmd } },
 	{ 0,                            XK_Print,  spawn,          {.v = screenshotcmd } },
 	{ ControlMask,                  XK_Print,  spawn,          {.v = screenshotfocusedcmd } },
 	{ ShiftMask|ControlMask,        XK_Print,  spawn,          {.v = screenshotfullcmd } },
