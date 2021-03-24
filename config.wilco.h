@@ -95,8 +95,8 @@ static const int resizehints = 0;    /* 1 means respect size hints in tiled resi
 #include "layouts.c"
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-  { "|M|",      centeredmaster },          /* first entry is default */
 	{ "[]=",      tile },
+	{ "|M|",      centeredmaster },          /* first entry is default */
 	{ "><>",      NULL },                    /* no layout function means floating behavior */
 	{ "[M]",      monocle },
 	{ ">M>",      centeredfloatingmaster },
@@ -121,15 +121,17 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "st", NULL };
 static const char *slockcmd[]  = { "slock", NULL };
-static const char *xscreensavercmd[]  = { "xscreensaver-command", "-lock", NULL };
+// static const char *xscreensavercmd[]  = { "xscreensaver-command", "-lock", NULL };
 static const char *surfcmd[]  = { "tabbed", "surf", "-pe", NULL };
-static const char *keepasscmd[] = { "keepass", NULL };
-static const char *keepassautotypecmd[] = { "keepass", "--auto-type", NULL };
+// static const char *keepasscmd[] = { "keepass", NULL };
+// static const char *keepassautotypecmd[] = { "keepass", "--auto-type", NULL };
 static const char *keepassxccmd[] = { "keepassxc", NULL };
 // static const char *suspendcmd[] = { "systemctl", "suspend", NULL };
-static const char *vifmcmd[] = { "st", "vifm", NULL };
-static const char *thunarcmd[] = { "thunar", NULL };
+// static const char *vifmcmd[] = { "st", "vifm", NULL };
+// static const char *thunarcmd[] = { "thunar", NULL };
 static const char *nemocmd[] = { "nemo", NULL };
+// static const char *nnncmd[] = { "st", "-f", "'MesloLGSDZ Nerd Font:pixelsize=24'", "-e", "nnn", NULL };
+// static const char *nnncmd[] = { "st", "-e", "nnn", NULL };
 static const char *screenshotcmd[] = { "scrot", "-s", "~/Pictures/Screenshots/screenshot_%Y-%m-%d_%H-%M-%S.png", NULL };
 static const char *screenshotfocusedcmd[] = { "scrot", "--focused", "~/Pictures/Screenshots/screenshot_%Y-%m-%d_%H-%M-%S.png", NULL };
 static const char *screenshotfullcmd[] = { "scrot", "--multidisp", "~/Pictures/Screenshots/screenshot_%Y-%m-%d_%H-%M-%S.png", NULL };
@@ -142,6 +144,9 @@ static const char *mediaprevcmd[] = { "playerctl", "previous", NULL };
 static const char *volupcmd[]  = { "/home/matt/scripts/pavol.sh", "+", NULL };
 static const char *voldowncmd[]  = { "/home/matt/scripts/pavol.sh", "-", NULL };
 static const char *volmutecmd[]  = { "/home/matt/scripts/pavol.sh", "mute", NULL };
+// backlight keys
+static const char *brightnessupcmd[]  = { "xbacklight", "+5", NULL };
+static const char *brightnessdowncmd[]  = { "xbacklight", "-5", NULL };
 // custom scripts for various things
 static const char *btheadset[] = { "/home/matt/scripts/bt.sh", "flip", NULL};
 
@@ -196,6 +201,8 @@ static Key keys[] = {
 	{ 0,              XF86XK_AudioPrev,        spawn,          {.v = mediaprevcmd } },
 	{ 0,              XF86XK_Tools,            spawn,          {.v = btheadset } },
 	{ 0,              XF86XK_Tools,            spawn,          {.v = btheadset } },
+	{ 0,              XF86XK_MonBrightnessUp,     spawn,          {.v = brightnessupcmd } },
+	{ 0,              XF86XK_MonBrightnessDown,   spawn,          {.v = brightnessdowncmd } },
 	/* screenshots */
 	{ 0,              XK_Print,                spawn,          SHCMD("scrot -s ~/Sync/Screenshots/%Y-%m-%d-%s%w%h.jpg") },
 	/* Custom Commands */
