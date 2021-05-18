@@ -144,43 +144,43 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
-static const char *termcmd[]  = { "st", NULL };
-static const char *slockcmd[]  = { "slock", NULL };
-static const char *surfcmd[]  = { "tabbed", "surf", "-pe", NULL };
+// static const char *termcmd[]  = { "st", NULL };
+// static const char *slockcmd[]  = { "slock", NULL };
+// static const char *surfcmd[]  = { "tabbed", "surf", "-pe", NULL };
 // static const char *keepasscmd[] = { "keepass", NULL };
-static const char *keepassxccmd[] = { "keepassxc", NULL };
+// static const char *keepassxccmd[] = { "keepassxc", NULL };
 // static const char *keepassautotypecmd[] = { "keepass", "--auto-type", NULL };
 // static const char *suspendcmd[] = { "systemctl", "suspend", NULL };
 // static const char *vifmcmd[] = { "st", "vifm", NULL };
 // static const char *thunarcmd[] = { "thunar", NULL };
 // static const char *nemocmd[] = { "GTK_THEME=Dracula", "nemo", NULL };
-static const char *nemocmd[] = { "nemo", NULL };
+// static const char *nemocmd[] = { "nemo", NULL };
 // static const char *nnncmd[] = { "st", "-f", "'MesloLGSDZ Nerd Font:pixelsize=18'", "-e", "nnn", NULL };
-static const char *screenshotcmd[] = { "scrot", "--select", "~/Pictures/Screenshots/screenshot_%Y-%m-%d_%H-%M-%S.png", NULL };
-static const char *screenshotfocusedcmd[] = { "scrot", "--focused", "~/Pictures/Screenshots/screenshot_%Y-%m-%d_%H-%M-%S.png", NULL };
-static const char *screenshotfullcmd[] = { "scrot", "--multidisp", "~/Pictures/Screenshots/screenshot_%Y-%m-%d_%H-%M-%S.png", NULL };
+// static const char *screenshotcmd[] = { "scrot", "--select", "/home/matt/Pictures/Screenshots/screenshot_%Y-%m-%d_%H-%M-%S.png", NULL };
+// static const char *screenshotfocusedcmd[] = { "scrot", "--focused", "/home/matt/Pictures/Screenshots/screenshot_%Y-%m-%d_%H-%M-%S.png", NULL };
+// static const char *screenshotfullcmd[] = { "scrot", "--multidisp", "~/Pictures/Screenshots/screenshot_%Y-%m-%d_%H-%M-%S.png", NULL };
 // Media player controls by playerctl command (https://github.com/acrisci/playerctl)
-static const char *mediaplaycmd[] = { "playerctl", "play-pause", NULL };
-static const char *mediastopcmd[] = { "playerctl", "stop", NULL };
-static const char *medianextcmd[] = { "playerctl", "next", NULL };
-static const char *mediaprevcmd[] = { "playerctl", "previous", NULL };
+// static const char *mediaplaycmd[] = { "playerctl", "play-pause", NULL };
+// static const char *mediastopcmd[] = { "playerctl", "stop", NULL };
+// static const char *medianextcmd[] = { "playerctl", "next", NULL };
+// static const char *mediaprevcmd[] = { "playerctl", "previous", NULL };
 // volume media keys
-static const char *volupcmd[]  = { "pactl", "set-sink-volume", "0", "+5%", NULL };
-static const char *voldowncmd[]  = { "pactl", "set-sink-volume", "0", "-5%", NULL };
-static const char *volmutecmd[]  = { "pactl", "set-sink-mute", "0", "toggle", NULL };
+// static const char *volupcmd[]  = { "pactl", "set-sink-volume", "0", "+5%", NULL };
+// static const char *voldowncmd[]  = { "pactl", "set-sink-volume", "0", "-5%", NULL };
+// static const char *volmutecmd[]  = { "pactl", "set-sink-mute", "0", "toggle", NULL };
 // backlight brightness keys
-static const char *brightnessupcmd[]  = { "xbacklight", "+5", NULL };
-static const char *brightnessdowncmd[]  = { "xbacklight", "-5", NULL };
+// static const char *brightnessupcmd[]  = { "xbacklight", "+5", NULL };
+// static const char *brightnessdowncmd[]  = { "xbacklight", "-5", NULL };
 // custom scripts for various things
 // static const char *btheadset[] = { "/home/matt/scripts/bt.sh", "flip", NULL};
-static const char *screenchange[] = { "autorandr", "--change", NULL};
+// static const char *screenchange[] = { "autorandr", "--change", NULL};
 // static const char *screendocked[] = { "autorandr", "--load", "docked", "--force", NULL};
 // static const char *screenmobile[] = { "autorandr", "--load", "mobile", "--force", NULL};
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
-	{ ControlMask,                  XK_space,  spawn,          {.v = dmenucmd } },
-	{ MODKEY,                       XK_t,      spawn,          {.v = termcmd } },
+	// { ControlMask,                  XK_space,  spawn,          {.v = dmenucmd } },
+	// { MODKEY,                       XK_t,      spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_bracketleft,  rotatestack, {.i = -1 } },
 	{ MODKEY,                       XK_bracketright, rotatestack, {.i = +1 } },
@@ -218,30 +218,30 @@ static Key keys[] = {
 	TAGKEYS(                        XK_8,                      7)
  	TAGKEYS(                        XK_9,                      8)
 	/* Media and special Keyboard Keys */
-	{ 0,              XF86XK_AudioRaiseVolume,    spawn,          {.v = volupcmd } },
-	{ 0,              XF86XK_AudioLowerVolume,    spawn,          {.v = voldowncmd } },
-	{ 0,              XF86XK_AudioMute,           spawn,          {.v = volmutecmd } },
-	{ 0,              XF86XK_AudioPlay,           spawn,          {.v = mediaplaycmd } },
-	{ 0,              XF86XK_AudioPause,          spawn,          {.v = mediaplaycmd } },
-	{ 0,              XF86XK_AudioStop,           spawn,          {.v = mediastopcmd } },
-	{ 0,              XF86XK_AudioNext,           spawn,          {.v = medianextcmd } },
-	{ 0,              XF86XK_AudioPrev,           spawn,          {.v = mediaprevcmd } },
-	{ 0,              XF86XK_MonBrightnessUp,     spawn,          {.v = brightnessupcmd } },
-	{ 0,              XF86XK_MonBrightnessDown,   spawn,          {.v = brightnessdowncmd } },
+	// { 0,              XF86XK_AudioRaiseVolume,    spawn,          {.v = volupcmd } },
+	// { 0,              XF86XK_AudioLowerVolume,    spawn,          {.v = voldowncmd } },
+	// { 0,              XF86XK_AudioMute,           spawn,          {.v = volmutecmd } },
+	// { 0,              XF86XK_AudioPlay,           spawn,          {.v = mediaplaycmd } },
+	// { 0,              XF86XK_AudioPause,          spawn,          {.v = mediaplaycmd } },
+	// { 0,              XF86XK_AudioStop,           spawn,          {.v = mediastopcmd } },
+	// { 0,              XF86XK_AudioNext,           spawn,          {.v = medianextcmd } },
+	// { 0,              XF86XK_AudioPrev,           spawn,          {.v = mediaprevcmd } },
+	// { 0,              XF86XK_MonBrightnessUp,     spawn,          {.v = brightnessupcmd } },
+	// { 0,              XF86XK_MonBrightnessDown,   spawn,          {.v = brightnessdowncmd } },
 	// { 0,              XF86XK_Tools,            spawn,          {.v = btheadset } },
 	/* Custom Commands */
-	{ MODKEY,                       XK_l,      spawn,          {.v = slockcmd } },
-	{ MODKEY,                       XK_w,      spawn,          {.v = surfcmd } },
-	{ AltMask|ControlMask,          XK_k,      spawn,          {.v = keepassxccmd } },
+	// { MODKEY,                       XK_l,      spawn,          {.v = slockcmd } },
+	// { MODKEY,                       XK_w,      spawn,          {.v = surfcmd } },
+	// { AltMask|ControlMask,          XK_k,      spawn,          {.v = keepassxccmd } },
 	// { AltMask|ControlMask,          XK_a,      spawn,          {.v = keepassautotypecmd } },
 	{ AltMask,                      XK_F4,     killclient,     {0} }, /* exit client */
 	{ AltMask|ControlMask,          XK_Delete, quit,           {0} }, /* quit dwm */
 	{ AltMask|ControlMask,          XK_R,      self_restart,   {0} }, /* restart dwm */
-	{ MODKEY,                       XK_e,      spawn,          {.v = nemocmd } },
-	{ 0,                            XK_Print,  spawn,          {.v = screenshotcmd } },
-	{ ControlMask,                  XK_Print,  spawn,          {.v = screenshotfocusedcmd } },
-	{ ShiftMask|ControlMask,        XK_Print,  spawn,          {.v = screenshotfullcmd } },
-	{ AltMask|ControlMask,          XK_Insert, spawn,          {.v = screenchange } }, /* autorandr reset */
+	// { MODKEY,                       XK_e,      spawn,          {.v = nemocmd } },
+	// { 0,                            XK_Print,  spawn,          {.v = screenshotcmd } },
+	// { ControlMask,                  XK_Print,  spawn,          {.v = screenshotfocusedcmd } },
+	// { ShiftMask|ControlMask,        XK_Print,  spawn,          {.v = screenshotfullcmd } },
+	// { AltMask|ControlMask,          XK_Insert, spawn,          {.v = screenchange } }, /* autorandr reset */
 };
 
 /* button definitions */
@@ -251,7 +251,7 @@ static Button buttons[] = {
 	{ ClkLtSymbol,          0,              Button1,        setlayout,      {0} },
 	{ ClkLtSymbol,          0,              Button3,        setlayout,      {.v = &layouts[2]} },
 	{ ClkWinTitle,          0,              Button2,        zoom,           {0} },
-	{ ClkStatusText,        0,              Button2,        spawn,          {.v = termcmd } },
+	// { ClkStatusText,        0,              Button2,        spawn,          {.v = termcmd } },
 	{ ClkClientWin,         MODKEY,         Button1,        movemouse,      {0} },
 	{ ClkClientWin,         MODKEY,         Button2,        togglefloating, {0} },
 	{ ClkClientWin,         MODKEY,         Button3,        resizemouse,    {0} },
