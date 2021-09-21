@@ -87,6 +87,7 @@ static const Rule rules[] = {
 	// Display 1, tag 1 - Mail/Calendar
 	// { "Mailspring",       NULL,       NULL,       1 << 0,       0,            0 },
 	{ "Chromium",         "crx_pkooggnaalmfkidjmlhoelhdllpphaga",       NULL,      1 << 0,       0,            0 },
+	{ "Thunderbird",      NULL,       NULL,       1 << 0,       0,            0 },
 	// { "MineTime",         NULL,       NULL,       1 << 0,       0,            0 },
 	// Display 1, tag 2 - Messaging clients
 	{ "Hamster",          NULL,       NULL,       1 << 1,       0,            0 },
